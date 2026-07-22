@@ -128,7 +128,11 @@
     elemento.replaceChildren(svg);
   }
 
+  const catalogoPorId = new Map();
+
   function atualizarProdutoNaPagina(produto, catalogo) {
+    catalogoPorId.set(produto.id, produto);
+    const demonstrativo = catalogo.demonstrativo !== false;
     const precoReferencia = Number(produto.precoReferencia);
     const precoAtual = Number(produto.precoAtual);
     const desconto = calcularDesconto(precoReferencia, precoAtual);
@@ -156,19 +160,42 @@
       if (atual) atual.textContent = formatadorMoeda.format(precoAtual);
       if (selo) selo.textContent = `-${desconto}%`;
       if (resumo) {
-        const diferenca = precoAtual - menorPreco;
-        resumo.textContent = diferenca <= 0.009
-          ? "Menor preço em 90 dias"
-          : `${formatadorMoeda.format(diferenca)} acima do menor preço`;
+        if (demonstrativo) {
+          resumo.textContent = "Histórico demonstrativo";
+        } else {
+          const diferenca = precoAtual - menorPreco;
+          resumo.textContent = diferenca <= 0.009
+            ? "Menor preço em 90 dias"
+            : `${formatadorMoeda.format(diferenca)} acima do menor preço`;
+        }
       }
       if (grafico) criarGraficoPreco(grafico, historico, produto.nome);
+
       if (link && produto.urlOferta) {
+        const icone = document.createElement("span");
+        icone.className = "icone-carrinho";
+        icone.setAttribute("aria-hidden", "true");
+        link.replaceChildren(icone, document.createTextNode(` Ver oferta${produto.loja ? ` em ${produto.loja}` : ""}`));
         link.href = produto.urlOferta;
         link.target = "_blank";
-        link.rel = "sponsored noopener noreferrer";
+        link.rel = "sponsored nofollow noopener noreferrer";
         link.dataset.linkReal = "true";
+        link.dataset.produto = produto.id;
+        link.dataset.loja = produto.loja || "Loja parceira";
+        link.dataset.preco = String(precoAtual);
+        cartao.dataset.urlOferta = produto.urlOferta;
+        cartao.dataset.loja = produto.loja || "Loja parceira";
+      } else if (link && produto.slugGuia) {
+        link.href = produto.slugGuia;
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+        link.dataset.linkReal = "guide";
       }
-      cartao.title = `Preço atualizado em ${formatadorData.format(new Date(catalogo.atualizadoEm))} · ${catalogo.fonte}`;
+
+      cartao.classList.toggle("dados-demonstrativos", demonstrativo);
+      cartao.title = demonstrativo
+        ? "Dados demonstrativos — links de loja ainda não conectados"
+        : `Preço atualizado em ${formatadorData.format(new Date(catalogo.atualizadoEm))} · ${catalogo.fonte}`;
     }
 
     selecionarTodos(`[data-desconto-produto="${produto.id}"]`).forEach((selo) => {
@@ -186,10 +213,10 @@
       const catalogo = await resposta.json();
       if (!Array.isArray(catalogo.produtos)) throw new Error("Catálogo de preços inválido");
       catalogo.produtos.forEach((produto) => atualizarProdutoNaPagina(produto, catalogo));
-      document.documentElement.dataset.precos = "carregados";
+      document.documentElement.dataset.precos = catalogo.demonstrativo !== false ? "demonstrativos" : "verificados";
     } catch (erro) {
       document.documentElement.dataset.precos = "reserva";
-      console.warn("Os preços de reserva do HTML foram mantidos.", erro);
+      console.warn("Os dados de reserva do HTML foram mantidos.", erro);
     }
   }
 
@@ -305,13 +332,11 @@
     if (!campoBusca.value.trim()) limparBusca();
   });
 
-  cartoesCategoria.forEach((cartao) => {
-    cartao.addEventListener("click", (evento) => {
-      evento.preventDefault();
-      if (campoBusca) campoBusca.value = selecionar("strong", cartao)?.textContent.trim() || "";
-      executarBusca(campoBusca?.value);
-    });
-  });
+  const buscaInicial = new URLSearchParams(window.location.search).get("busca");
+  if (buscaInicial && campoBusca) {
+    campoBusca.value = buscaInicial;
+    executarBusca(buscaInicial);
+  }
 
   const CHAVE_FAVORITOS = "ofertas-que-valem:favoritos";
   const botaoFavoritos = selecionar(".botao-favoritos");
@@ -470,18 +495,45 @@
     selecionadas.forEach((caixa) => {
       const cartao = selecionar(`.cartao-ranking[data-produto="${caixa.dataset.produto}"]`);
       if (!cartao) return;
+      const produto = catalogoPorId.get(caixa.dataset.produto);
       const item = document.createElement("article");
       item.className = "item-comparacao";
       const imagem = selecionar(".imagem-ranking-produto", cartao)?.cloneNode(true);
       const titulo = document.createElement("h3");
       titulo.textContent = selecionar("h3", cartao)?.textContent.trim() || caixa.dataset.nome;
+      const acoes = document.createElement("div");
+      acoes.className = "acoes-item-comparacao";
+
+      const guia = document.createElement("a");
+      guia.href = produto?.slugGuia || "guias.html";
+      guia.textContent = "Ver guia completo";
+      guia.className = "acao-secundaria-comparacao";
+      acoes.append(guia);
+
+      if (produto?.urlOferta) {
+        const oferta = document.createElement("a");
+        oferta.href = produto.urlOferta;
+        oferta.target = "_blank";
+        oferta.rel = "sponsored nofollow noopener noreferrer";
+        oferta.textContent = `Ver oferta${produto.loja ? ` em ${produto.loja}` : ""}`;
+        oferta.className = "acao-principal-comparacao";
+        oferta.dataset.linkOferta = "";
+        oferta.dataset.linkReal = "true";
+        oferta.dataset.produto = produto.id;
+        oferta.dataset.loja = produto.loja || "Loja parceira";
+        oferta.dataset.preco = String(produto.precoAtual || "");
+        oferta.addEventListener("click", () => registrarCliqueOferta(oferta));
+        acoes.append(oferta);
+      }
+
       if (imagem) item.append(imagem);
       item.append(
         titulo,
-        adicionarLinhaComparacao(cartao, "Nota", ".nota-produto", "valor-nota"),
-        adicionarLinhaComparacao(cartao, "Preço", ".preco-inicial strong"),
+        adicionarLinhaComparacao(cartao, "Nota editorial", ".nota-produto", "valor-nota"),
+        adicionarLinhaComparacao(cartao, "Preço de exemplo", ".preco-inicial strong"),
         adicionarLinhaComparacao(cartao, "Ponto forte", ".positivo"),
-        adicionarLinhaComparacao(cartao, "Atenção", ".negativo")
+        adicionarLinhaComparacao(cartao, "Atenção", ".negativo"),
+        acoes
       );
       conteudoComparacao?.append(item);
     });
@@ -505,11 +557,27 @@
     mostrarAviso("Mostrando todas as ofertas disponíveis.");
   });
 
-  selecionarTodos(".cartao-oferta > a").forEach((link) => {
+  function registrarCliqueOferta(link) {
+    const detalhe = {
+      produto: link.dataset.produto || "",
+      loja: link.dataset.loja || "",
+      preco: Number(link.dataset.preco) || null,
+      destino: link.href
+    };
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "clique_oferta", ...detalhe });
+    window.dispatchEvent(new CustomEvent("ofertas-que-valem:clique-oferta", { detail: detalhe }));
+  }
+
+  selecionarTodos("[data-link-oferta]").forEach((link) => {
     link.addEventListener("click", (evento) => {
-      if (link.dataset.linkReal === "true") return;
+      if (link.dataset.linkReal === "true") {
+        registrarCliqueOferta(link);
+        return;
+      }
+      if (link.dataset.linkReal === "guide" || !link.getAttribute("href")?.startsWith("#")) return;
       evento.preventDefault();
-      mostrarAviso("Oferta demonstrativa: conecte o endereço da loja antes de publicar.");
+      mostrarAviso("As lojas serão conectadas antes do lançamento.");
     });
   });
 

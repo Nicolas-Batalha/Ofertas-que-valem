@@ -2693,3 +2693,318 @@ section[id] {
     height: 40px;
   }
 }
+
+
+/* Camada de pré-lançamento e navegação editorial */
+.pular-conteudo {
+  position: fixed;
+  z-index: 200;
+  top: 12px;
+  left: 12px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #00384d;
+  font-weight: 900;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+  box-shadow: 0 8px 24px rgba(0, 41, 59, .2);
+}
+
+.pular-conteudo:focus { transform: translateY(0); }
+
+.aviso-pre-lancamento {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-bottom: 1px solid #f1d49c;
+  background: #fff7e6;
+  color: #67420b;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.aviso-pre-lancamento strong { color: #4b2d00; }
+
+.dados-demonstrativos { position: relative; }
+
+.dados-demonstrativos::after {
+  content: "Demonstração";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(0, 41, 59, .9);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.aviso-afiliado {
+  max-width: 780px;
+  line-height: 1.55;
+}
+
+.aviso-afiliado strong { color: #ffffff; }
+
+.rodape-conteudo {
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.rodape-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 18px;
+  max-width: 520px;
+}
+
+.rodape-links a {
+  color: inherit;
+  font-weight: 800;
+  text-underline-offset: 4px;
+}
+
+.acoes-item-comparacao {
+  display: grid;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.acoes-item-comparacao a {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.acao-principal-comparacao { background: #08a65a; color: #fff; }
+.acao-secundaria-comparacao { border: 1px solid #b7cbd3; color: #00384d; }
+
+#botao-comparar[aria-disabled="true"] {
+  opacity: .6;
+}
+
+@media (max-width: 700px) {
+  .aviso-pre-lancamento {
+    display: block;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .aviso-pre-lancamento strong { display: block; }
+
+  .busca-cabecalho input { font-size: 16px; }
+
+  .menu-principal a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .comparador-flutuante p strong { font-size: 14px; }
+
+  .rodape-conteudo { display: grid; }
+
+  .rodape-links { justify-content: flex-start; }
+}
+
+
+/* Correção: mantém a imagem do ranking dentro da área visual do card */
+.cartao-ranking .imagem-ranking {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  contain: paint;
+  padding: 12px 48px 8px;
+}
+
+.cartao-ranking .imagem-ranking-produto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 230px;
+  max-height: 170px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cartao-ranking .conteudo-ranking {
+  position: relative;
+  z-index: 2;
+  min-height: 198px;
+  padding-top: 14px;
+  background: #ffffff;
+}
+
+.cartao-ranking .cabecalho-produto-ranking {
+  min-height: 42px;
+  margin-bottom: 6px;
+}
+
+.cartao-ranking .cabecalho-produto-ranking h3 {
+  min-width: 0;
+  max-width: 68%;
+}
+
+.cartao-ranking .atualizacao {
+  max-width: 30%;
+  white-space: normal;
+}
+
+@media (max-width: 700px) {
+  .cartao-ranking .imagem-ranking {
+    height: 210px;
+    padding-inline: 54px;
+  }
+
+  .cartao-ranking .imagem-ranking-produto {
+    max-width: 260px;
+    max-height: 188px;
+  }
+}
+
+
+/* Correção: separa imagem, dados e ação nos cards de produtos */
+.secao-ofertas {
+  min-height: 0;
+  padding: 28px 0 48px;
+}
+
+.secao-ofertas .aviso-afiliado {
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.secao-ofertas .titulo-ofertas {
+  margin-bottom: 18px;
+}
+
+.grade-ofertas {
+  align-items: stretch;
+  gap: 14px;
+}
+
+.cartao-oferta {
+  display: grid;
+  grid-template-rows: 150px minmax(40px, auto) auto auto 36px auto 46px;
+  gap: 4px;
+  min-height: 382px;
+  overflow: hidden;
+  padding: 14px;
+}
+
+.cartao-oferta .miniatura-oferta {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  contain: paint;
+  padding: 16px 28px 8px;
+  background: linear-gradient(145deg, #ffffff, #f0f5f6);
+  border-radius: 10px;
+}
+
+.cartao-oferta .imagem-oferta-produto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 190px;
+  max-height: 126px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cartao-oferta h3 {
+  align-self: start;
+  min-height: 40px;
+  margin: 4px 0 0;
+  overflow: visible;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.cartao-oferta s {
+  align-self: end;
+  font-size: 11px;
+}
+
+.cartao-oferta .preco-oferta {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.cartao-oferta .historico-preco {
+  height: 36px;
+  margin-top: 2px;
+}
+
+.cartao-oferta small {
+  margin: 3px 0 7px;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.cartao-oferta > a {
+  align-self: end;
+  min-height: 46px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 13px;
+  background: #00384d;
+  border: 0;
+  border-radius: 9px;
+}
+
+.cartao-oferta > a:hover {
+  color: #ffffff;
+  background: #00506a;
+}
+
+.cartao-oferta.dados-demonstrativos .desconto-oferta {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .cartao-oferta {
+    grid-template-rows: 170px minmax(40px, auto) auto auto 36px auto 46px;
+    min-height: 402px;
+  }
+
+  .cartao-oferta .miniatura-oferta {
+    height: 170px;
+    padding-inline: 42px;
+  }
+
+  .cartao-oferta .imagem-oferta-produto {
+    max-width: 230px;
+    max-height: 145px;
+  }
+}
+
+@media (max-width: 450px) {
+  .secao-ofertas {
+    padding-bottom: 38px;
+  }
+
+  .cartao-oferta {
+    padding: 13px;
+  }
+
+  .cartao-oferta h3 {
+    font-size: 16px;
+  }
+}

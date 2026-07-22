@@ -1,0 +1,10 @@
+{
+  "name": "Ofertas que Valem",
+  "short_name": "Ofertas",
+  "description": "Guias e comparações para escolher melhor.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f9fa",
+  "theme_color": "#00293b"
+}

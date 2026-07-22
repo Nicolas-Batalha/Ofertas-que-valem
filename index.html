@@ -3,18 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Compare produtos, consulte rankings independentes e encontre ofertas que realmente valem a pena.">
-  <title>Ofertas que Valem — Compare, escolha e compre melhor</title>
+  <meta name="description" content="Guias de compra, comparações lado a lado e critérios transparentes para você escolher produtos com mais segurança.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#00293b">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://ofertas-que-valem.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ofertas que Valem">
+  <meta property="og:title" content="Ofertas que Valem — Compare antes de escolher">
+  <meta property="og:description" content="Guias objetivos, comparações lado a lado e uma metodologia clara para ajudar você a comprar melhor.">
+  <meta property="og:url" content="https://ofertas-que-valem.vercel.app/">
+  <meta property="og:image" content="https://ofertas-que-valem.vercel.app/imagens/og-ofertas-que-valem.png">
+  <meta property="og:image:width" content="1693">
+  <meta property="og:image:height" content="935">
+  <meta property="og:image:alt" content="Ofertas que Valem — compare antes e escolha com clareza">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ofertas que Valem — Compare antes de escolher">
+  <meta name="twitter:description" content="Guias objetivos e comparações transparentes para comprar melhor.">
+  <meta name="twitter:image" content="https://ofertas-que-valem.vercel.app/imagens/og-ofertas-que-valem.png">
+  <title>Ofertas que Valem — Compare antes de escolher</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
   <script src="interacoes.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ofertas-que-valem.vercel.app/#organizacao",
+          "name": "Ofertas que Valem",
+          "url": "https://ofertas-que-valem.vercel.app/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ofertas-que-valem.vercel.app/#site",
+          "url": "https://ofertas-que-valem.vercel.app/",
+          "name": "Ofertas que Valem",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://ofertas-que-valem.vercel.app/#organizacao" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ofertas-que-valem.vercel.app/?busca={search_term_string}#rankings",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
+  <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
   <header class="cabecalho">
     <div class="limite cabecalho-conteudo">
-      <a class="marca" href="#inicio" aria-label="Ofertas que Valem — início">
+      <a class="marca" href="/" aria-label="Ofertas que Valem — início">
         <span class="marca-simbolo" aria-hidden="true"><span>✓</span></span>
         <span class="marca-texto">Ofertas <small>que Valem</small></span>
       </a>
@@ -24,10 +69,10 @@
       </button>
 
       <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
-        <a href="#categorias">Categorias <span aria-hidden="true">⌄</span></a>
-        <a href="#rankings">Rankings</a>
-        <a href="#ofertas">Ofertas</a>
-        <a href="#metodologia">Guias</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="#rankings">Comparar</a>
+        <a href="#ofertas">Produtos</a>
+        <a href="guias.html">Guias</a>
       </nav>
 
       <form class="busca-cabecalho" role="search" novalidate>
@@ -42,13 +87,18 @@
     </div>
   </header>
 
-  <main id="inicio">
+  <div class="aviso-pre-lancamento" role="note">
+    <strong>Catálogo em preparação.</strong>
+    <span>Os valores atuais são demonstrativos. Lojas e preços verificados serão ativados antes do lançamento.</span>
+  </div>
+
+  <main id="conteudo-principal">
     <section class="destaque-principal">
       <div class="limite destaque-grade">
         <div class="destaque-texto">
-          <h1><span>Compare antes.</span><span>Compre melhor.</span></h1>
-          <p>Rankings claros, preços e ofertas para você escolher sem dúvida.</p>
-          <a class="botao-primario" href="#rankings"><span class="icone-lupa" aria-hidden="true"></span> Buscar produtos</a>
+          <h1><span>Compare antes.</span><span>Escolha com clareza.</span></h1>
+          <p>Guias objetivos, comparações lado a lado e critérios transparentes para você decidir melhor.</p>
+          <a class="botao-primario" href="guias.html"><span class="icone-lupa" aria-hidden="true"></span> Explorar guias</a>
         </div>
 
         <div class="vitrine-destaque" aria-label="Produtos em oferta">
@@ -64,9 +114,9 @@
     </section>
 
     <section class="faixa-confianca limite" aria-label="Compromissos do site">
-      <div class="item-confianca"><span class="icone-confianca icone-escudo" aria-hidden="true"></span><strong>Análise independente</strong></div>
-      <div class="item-confianca"><span class="icone-confianca icone-calendario" aria-hidden="true"></span><strong>Preços atualizados hoje</strong></div>
-      <div class="item-confianca"><span class="icone-confianca icone-pessoas" aria-hidden="true"><i></i><i></i></span><strong>+12 mil avaliações analisadas</strong></div>
+      <div class="item-confianca"><span class="icone-confianca icone-escudo" aria-hidden="true"></span><strong>Critérios transparentes</strong></div>
+      <div class="item-confianca"><span class="icone-confianca icone-calendario" aria-hidden="true"></span><strong>Comparação lado a lado</strong></div>
+      <div class="item-confianca"><span class="icone-confianca icone-pessoas" aria-hidden="true"><i></i><i></i></span><strong>Sem custo para você</strong></div>
     </section>
 
     <section class="secao-padrao secao-categorias limite" id="categorias">
@@ -76,22 +126,22 @@
 
       <div class="carrossel-categorias">
         <div class="grade-categorias">
-          <a class="cartao-categoria" href="#rankings" data-termos="casa cozinha air fryer cafeteira"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/casa-cozinha.webp" alt="" loading="lazy"></span><strong>Casa e Cozinha</strong></a>
-          <a class="cartao-categoria" href="#rankings" data-termos="eletronicos fone bluetooth robo aspirador"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/eletronicos.webp" alt="" loading="lazy"></span><strong>Eletrônicos</strong></a>
-          <a class="cartao-categoria" href="#rankings" data-termos="beleza cuidados pessoais"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/beleza.webp" alt="" loading="lazy"></span><strong>Beleza</strong></a>
-          <a class="cartao-categoria" href="#rankings" data-termos="ferramentas furadeira"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/ferramentas.webp" alt="" loading="lazy"></span><strong>Ferramentas</strong></a>
-          <a class="cartao-categoria" href="#rankings" data-termos="esportes futebol"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/esportes.webp" alt="" loading="lazy"></span><strong>Esportes</strong></a>
-          <a class="cartao-categoria" href="#rankings" data-termos="infantil brinquedos"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/infantil.webp" alt="" loading="lazy"></span><strong>Infantil</strong></a>
-          <a class="cartao-categoria" href="#rankings" data-termos="automotivo carro pneus"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/automotivo.webp" alt="" loading="lazy"></span><strong>Automotivo</strong></a>
+          <a class="cartao-categoria" href="categorias.html#casa-e-cozinha" data-termos="casa cozinha air fryer cafeteira"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/casa-cozinha.webp" alt="" loading="lazy"></span><strong>Casa e Cozinha</strong></a>
+          <a class="cartao-categoria" href="categorias.html#eletronicos" data-termos="eletronicos fone bluetooth robo aspirador"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/eletronicos.webp" alt="" loading="lazy"></span><strong>Eletrônicos</strong></a>
+          <a class="cartao-categoria" href="categorias.html#beleza" data-termos="beleza cuidados pessoais"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/beleza.webp" alt="" loading="lazy"></span><strong>Beleza</strong></a>
+          <a class="cartao-categoria" href="categorias.html#ferramentas" data-termos="ferramentas furadeira"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/ferramentas.webp" alt="" loading="lazy"></span><strong>Ferramentas</strong></a>
+          <a class="cartao-categoria" href="categorias.html#esportes" data-termos="esportes futebol"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/esportes.webp" alt="" loading="lazy"></span><strong>Esportes</strong></a>
+          <a class="cartao-categoria" href="categorias.html#infantil" data-termos="infantil brinquedos"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/infantil.webp" alt="" loading="lazy"></span><strong>Infantil</strong></a>
+          <a class="cartao-categoria" href="categorias.html#automotivo" data-termos="automotivo carro pneus"><span class="categoria-imagem"><img src="imagens/otimizadas/categorias/automotivo.webp" alt="" loading="lazy"></span><strong>Automotivo</strong></a>
         </div>
-        <a class="botao-proximo botao-proximo-categorias" href="#metodologia" aria-label="Avançar categorias">→</a>
+        <a class="botao-proximo botao-proximo-categorias" href="categorias.html" aria-label="Ver todas as categorias">→</a>
       </div>
     </section>
 
     <section class="metodologia limite" id="metodologia">
       <div class="titulo-metodologia">
         <h2>Como chegamos à nota</h2>
-        <button class="link-metodologia" type="button" aria-expanded="false" aria-controls="detalhes-metodologia">Conheça nossa metodologia <span aria-hidden="true">→</span></button>
+        <a class="link-metodologia" href="metodologia.html">Conheça nossa metodologia <span aria-hidden="true">→</span></a>
       </div>
 
       <div class="criterios">
@@ -112,20 +162,20 @@
           <div class="barra-criterio"><span style="--progresso: 15%"></span></div>
         </div>
       </div>
-      <div class="detalhes-metodologia" id="detalhes-metodologia" hidden>
-        <p>Cruzamos preço, avaliações verificadas, recursos e facilidade de uso. A nota final dá mais peso ao custo-benefício e é revisada sempre que os preços mudam.</p>
+      <div class="detalhes-metodologia" id="detalhes-metodologia">
+        <p>Os pesos acima orientam nossas comparações editoriais. Dados de loja e preço só serão publicados depois de verificados.</p>
       </div>
     </section>
 
     <section class="secao-rankings" id="rankings">
       <div class="limite">
         <div class="cabecalho-rankings">
-          <h2>Rankings em destaque</h2>
+          <h2>Guias em destaque</h2>
           <div class="filtros-ranking" aria-label="Ordenar rankings">
             <button class="filtro-ranking filtro-ativo" type="button" data-filtro="popularidade" aria-pressed="true">Mais procurados</button>
             <button class="filtro-ranking" type="button" data-filtro="custo" aria-pressed="false">Custo-benefício</button>
-            <button class="filtro-ranking" type="button" data-filtro="avaliacao" aria-pressed="false">Melhor avaliação</button>
-            <button class="filtro-ranking" type="button" data-filtro="oferta" aria-pressed="false">Em oferta</button>
+            <button class="filtro-ranking" type="button" data-filtro="avaliacao" aria-pressed="false">Mais completos</button>
+            <button class="filtro-ranking" type="button" data-filtro="oferta" aria-pressed="false">Maior economia</button>
           </div>
           <a class="botao-proximo botao-proximo-rankings" href="#ofertas" aria-label="Avançar rankings">→</a>
         </div>
@@ -138,14 +188,14 @@
             <button class="favoritar-cartao" type="button" aria-label="Favoritar ranking de air fryers" aria-pressed="false">♡</button>
             <div class="imagem-ranking fundo-fritadeira"><img class="imagem-ranking-produto" src="imagens/otimizadas/produtos/air-fryer.webp" alt="Air fryer digital preta" loading="lazy"></div>
             <div class="conteudo-ranking">
-              <div class="cabecalho-produto-ranking"><h3>Melhores air fryers</h3><p class="atualizacao">Atualizado hoje</p></div>
+              <div class="cabecalho-produto-ranking"><h3>Guia de air fryers</h3><p class="atualizacao">Conteúdo editorial</p></div>
               <div class="resumo-nota">
                 <strong class="nota-produto">9,4</strong>
                 <ul><li class="positivo">Frita com pouco óleo</li><li class="negativo">Cesto menor (3,5 L)</li></ul>
               </div>
               <p class="preco-inicial">a partir de <strong data-preco-produto="air-fryer">R$ 349</strong></p>
-              <a class="link-detalhes" href="#metodologia">Ver prós e contras →</a>
-              <div class="acoes-ranking"><label><input type="checkbox" name="comparar" value="air-fryer" data-produto="air-fryer" data-nome="Air fryer" data-imagem="imagens/otimizadas/produtos/air-fryer.webp" checked> Comparar</label><a href="#metodologia">Ver análise</a></div>
+              <a class="link-detalhes" href="guias/air-fryer.html#criterios">Ver o que comparar →</a>
+              <div class="acoes-ranking"><label><input type="checkbox" name="comparar" value="air-fryer" data-produto="air-fryer" data-nome="Air fryer" data-imagem="imagens/otimizadas/produtos/air-fryer.webp"> Comparar</label><a href="guias/air-fryer.html">Ver guia</a></div>
             </div>
           </article>
 
@@ -154,14 +204,14 @@
             <button class="favoritar-cartao" type="button" aria-label="Favoritar ranking de robôs aspiradores" aria-pressed="false">♡</button>
             <div class="imagem-ranking fundo-aspirador"><img class="imagem-ranking-produto" src="imagens/otimizadas/produtos/robo-aspirador.webp" alt="Robô aspirador preto" loading="lazy"></div>
             <div class="conteudo-ranking">
-              <div class="cabecalho-produto-ranking"><h3>Melhores robôs aspiradores</h3><p class="atualizacao">Atualizado hoje</p></div>
+              <div class="cabecalho-produto-ranking"><h3>Guia de robôs aspiradores</h3><p class="atualizacao">Conteúdo editorial</p></div>
               <div class="resumo-nota">
                 <strong class="nota-produto">9,2</strong>
                 <ul><li class="positivo">Aspiração eficiente</li><li class="negativo">Evita tapetes altos</li></ul>
               </div>
               <p class="preco-inicial">a partir de <strong data-preco-produto="robo-aspirador">R$ 1.019</strong></p>
-              <a class="link-detalhes" href="#metodologia">Ver prós e contras →</a>
-              <div class="acoes-ranking"><label><input type="checkbox" name="comparar" value="robo-aspirador" data-produto="robo-aspirador" data-nome="Robô aspirador" data-imagem="imagens/otimizadas/produtos/robo-aspirador.webp" checked> Comparar</label><a href="#metodologia">Ver análise</a></div>
+              <a class="link-detalhes" href="guias/robo-aspirador.html#criterios">Ver o que comparar →</a>
+              <div class="acoes-ranking"><label><input type="checkbox" name="comparar" value="robo-aspirador" data-produto="robo-aspirador" data-nome="Robô aspirador" data-imagem="imagens/otimizadas/produtos/robo-aspirador.webp"> Comparar</label><a href="guias/robo-aspirador.html">Ver guia</a></div>
             </div>
           </article>
 
@@ -170,14 +220,14 @@
             <button class="favoritar-cartao" type="button" aria-label="Favoritar ranking de fones" aria-pressed="false">♡</button>
             <div class="imagem-ranking fundo-fone"><img class="imagem-ranking-produto" src="imagens/otimizadas/produtos/fone-bluetooth.webp" alt="Fone de ouvido bluetooth" loading="lazy"></div>
             <div class="conteudo-ranking">
-              <div class="cabecalho-produto-ranking"><h3>Melhores fones de ouvido</h3><p class="atualizacao">Atualizado hoje</p></div>
+              <div class="cabecalho-produto-ranking"><h3>Guia de fones Bluetooth</h3><p class="atualizacao">Conteúdo editorial</p></div>
               <div class="resumo-nota">
                 <strong class="nota-produto">9,0</strong>
                 <ul><li class="positivo">Som equilibrado</li><li class="negativo">Cancelamento básico</li></ul>
               </div>
               <p class="preco-inicial">a partir de <strong data-preco-produto="fone-bluetooth">R$ 279</strong></p>
-              <a class="link-detalhes" href="#metodologia">Ver prós e contras →</a>
-              <div class="acoes-ranking"><label><input type="checkbox" name="comparar" value="fone-bluetooth" data-produto="fone-bluetooth" data-nome="Fone bluetooth" data-imagem="imagens/otimizadas/produtos/fone-bluetooth.webp"> Comparar</label><a href="#metodologia">Ver análise</a></div>
+              <a class="link-detalhes" href="guias/fone-bluetooth.html#criterios">Ver o que comparar →</a>
+              <div class="acoes-ranking"><label><input type="checkbox" name="comparar" value="fone-bluetooth" data-produto="fone-bluetooth" data-nome="Fone Bluetooth" data-imagem="imagens/otimizadas/produtos/fone-bluetooth.webp"> Comparar</label><a href="guias/fone-bluetooth.html">Ver guia</a></div>
             </div>
           </article>
         </div>
@@ -188,10 +238,10 @@
 
     <section class="secao-ofertas" id="ofertas">
       <div class="limite">
-        <p class="aviso-afiliado">Publicidade: podemos receber comissão, sem custo extra para você.</p>
+        <p class="aviso-afiliado"><strong>Ambiente de preparação:</strong> preços e históricos desta seção são exemplos visuais. Nenhum link de compra está ativo.</p>
         <div class="titulo-ofertas">
-          <h2>Ofertas que realmente valem</h2>
-          <a href="#ofertas" id="ver-todas-ofertas">Ver todas as ofertas <span aria-hidden="true">→</span></a>
+          <h2>Produtos para acompanhar</h2>
+          <a href="guias.html" id="ver-todas-ofertas">Ver todos os guias <span aria-hidden="true">→</span></a>
         </div>
 
         <div class="grade-ofertas">
@@ -200,28 +250,28 @@
             <div class="miniatura-oferta"><img class="imagem-oferta-produto" data-campo="imagem" src="imagens/otimizadas/produtos/air-fryer.webp" alt="Air fryer 4,2 litros" loading="lazy"></div>
             <h3 data-campo="nome">Air fryer 4,2 L</h3><s data-campo="preco-referencia">R$ 459,00</s><strong class="preco-oferta" data-campo="preco-atual">R$ 349,00</strong>
             <div class="historico-preco" data-grafico-preco><i style="--altura:35%"></i><i style="--altura:55%"></i><i style="--altura:42%"></i><i style="--altura:68%"></i><i style="--altura:48%"></i><i style="--altura:30%"></i><i style="--altura:39%"></i></div>
-            <small data-campo="resumo-historico">Menor preço em 90 dias</small><a href="#ofertas" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver oferta</a>
+            <small data-campo="resumo-historico">Histórico demonstrativo</small><a href="guias/air-fryer.html" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver guia</a>
           </article>
           <article class="cartao-oferta" data-termos="robo aspirador limpeza casa" data-produto="robo-aspirador">
             <span class="desconto-oferta" data-campo="desconto">-32%</span>
             <div class="miniatura-oferta"><img class="imagem-oferta-produto" data-campo="imagem" src="imagens/otimizadas/produtos/robo-aspirador.webp" alt="Robô aspirador 2 em 1" loading="lazy"></div>
             <h3 data-campo="nome">Robô aspirador 2 em 1</h3><s data-campo="preco-referencia">R$ 1.499,00</s><strong class="preco-oferta" data-campo="preco-atual">R$ 1.019,00</strong>
             <div class="historico-preco" data-grafico-preco><i style="--altura:62%"></i><i style="--altura:50%"></i><i style="--altura:35%"></i><i style="--altura:54%"></i><i style="--altura:29%"></i><i style="--altura:33%"></i><i style="--altura:27%"></i></div>
-            <small data-campo="resumo-historico">Menor preço em 90 dias</small><a href="#ofertas" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver oferta</a>
+            <small data-campo="resumo-historico">Histórico demonstrativo</small><a href="guias/robo-aspirador.html" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver guia</a>
           </article>
           <article class="cartao-oferta" data-termos="fone bluetooth ouvido eletronicos audio" data-produto="fone-bluetooth">
             <span class="desconto-oferta" data-campo="desconto">-20%</span>
             <div class="miniatura-oferta"><img class="imagem-oferta-produto" data-campo="imagem" src="imagens/otimizadas/produtos/fone-bluetooth.webp" alt="Fone de ouvido bluetooth" loading="lazy"></div>
             <h3 data-campo="nome">Fone de ouvido bluetooth</h3><s data-campo="preco-referencia">R$ 349,00</s><strong class="preco-oferta" data-campo="preco-atual">R$ 279,00</strong>
             <div class="historico-preco" data-grafico-preco><i style="--altura:44%"></i><i style="--altura:31%"></i><i style="--altura:57%"></i><i style="--altura:64%"></i><i style="--altura:39%"></i><i style="--altura:28%"></i><i style="--altura:24%"></i></div>
-            <small data-campo="resumo-historico">Menor preço em 90 dias</small><a href="#ofertas" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver oferta</a>
+            <small data-campo="resumo-historico">Histórico demonstrativo</small><a href="guias/fone-bluetooth.html" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver guia</a>
           </article>
           <article class="cartao-oferta" data-termos="cafeteira eletrica cafe cozinha" data-produto="cafeteira">
             <span class="desconto-oferta" data-campo="desconto">-18%</span>
             <div class="miniatura-oferta"><img class="imagem-oferta-produto" data-campo="imagem" src="imagens/otimizadas/produtos/cafeteira.webp" alt="Cafeteira elétrica preta e inox" loading="lazy"></div>
             <h3 data-campo="nome">Cafeteira elétrica</h3><s data-campo="preco-referencia">R$ 219,00</s><strong class="preco-oferta" data-campo="preco-atual">R$ 179,00</strong>
             <div class="historico-preco" data-grafico-preco><i style="--altura:58%"></i><i style="--altura:43%"></i><i style="--altura:47%"></i><i style="--altura:34%"></i><i style="--altura:30%"></i><i style="--altura:38%"></i><i style="--altura:25%"></i></div>
-            <small data-campo="resumo-historico">Menor preço em 90 dias</small><a href="#ofertas" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver oferta</a>
+            <small data-campo="resumo-historico">Histórico demonstrativo</small><a href="guias/cafeteira.html" data-link-oferta><span class="icone-carrinho" aria-hidden="true"></span> Ver guia</a>
           </article>
         </div>
         <div class="paginacao paginacao-ofertas" aria-hidden="true"><span class="ativo"></span><span></span><span></span><span></span></div>
@@ -229,10 +279,10 @@
     </section>
   </main>
 
-  <aside class="comparador-flutuante" id="comparador" aria-label="Comparador de produtos">
+  <aside class="comparador-flutuante" id="comparador" hidden aria-label="Comparador de produtos">
     <div class="comparador-miniaturas" id="comparador-miniaturas"></div>
-    <p><strong id="texto-comparador">2 produtos selecionados</strong></p>
-    <a href="#rankings" id="botao-comparar">Comparar agora <span aria-hidden="true">→</span></a>
+    <p><strong id="texto-comparador">Selecione produtos</strong></p>
+    <a href="#rankings" id="botao-comparar" aria-disabled="true">Comparar selecionados <span aria-hidden="true">→</span></a>
   </aside>
 
   <div class="aviso-interface" id="aviso-interface" role="status" aria-live="polite"></div>
@@ -248,8 +298,17 @@
 
   <footer class="rodape">
     <div class="limite rodape-conteudo">
-      <p><strong>Ofertas que Valem</strong> — Compare, escolha e compre melhor.</p>
-      <p>Os preços podem mudar. Consulte sempre a loja antes da compra.</p>
+      <div>
+        <p><strong>Ofertas que Valem</strong> — Compare antes de escolher.</p>
+        <p>Conteúdo editorial em preparação. Preços e links serão verificados antes do lançamento.</p>
+      </div>
+      <nav class="rodape-links" aria-label="Informações do site">
+        <a href="sobre.html">Sobre</a>
+        <a href="metodologia.html">Metodologia</a>
+        <a href="politica-editorial.html">Política editorial</a>
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos</a>
+      </nav>
     </div>
   </footer>
 </body>

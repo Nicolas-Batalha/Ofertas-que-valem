@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ofertas-que-valem.vercel.app/sitemap.xml

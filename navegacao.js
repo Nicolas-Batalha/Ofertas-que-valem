@@ -18,4 +18,10 @@
   document.addEventListener("click", (evento) => {
     if (menu?.classList.contains("menu-aberto") && !document.querySelector(".cabecalho-conteudo")?.contains(evento.target)) fechar();
   });
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") fechar();
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 800) fechar();
+  }, { passive: true });
 })();

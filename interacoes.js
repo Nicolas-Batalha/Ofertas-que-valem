@@ -582,9 +582,15 @@
   });
 
   document.addEventListener("keydown", (evento) => {
-    if (evento.key === "Escape" && !modalComparacao?.open && campoBusca?.value) {
+    if (evento.key !== "Escape") return;
+    fecharMenu();
+    if (!modalComparacao?.open && campoBusca?.value) {
       campoBusca.value = "";
       limparBusca();
     }
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 800) fecharMenu();
+  }, { passive: true });
 })();

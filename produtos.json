@@ -1,0 +1,102 @@
+{
+  "atualizadoEm": "2026-07-22T13:17:00-03:00",
+  "fonte": "Catálogo local de demonstração",
+  "produtos": [
+    {
+      "id": "air-fryer",
+      "nome": "Air fryer 4,2 L",
+      "categoria": "Casa e Cozinha",
+      "imagem": "imagens/otimizadas/produtos/air-fryer.webp",
+      "alt": "Air fryer digital preta",
+      "precoReferencia": 459.00,
+      "precoAtual": 349.00,
+      "urlOferta": "",
+      "historico": [
+        { "data": "2026-04-24", "preco": 459.00 },
+        { "data": "2026-05-02", "preco": 449.00 },
+        { "data": "2026-05-10", "preco": 439.00 },
+        { "data": "2026-05-18", "preco": 429.00 },
+        { "data": "2026-05-26", "preco": 439.00 },
+        { "data": "2026-06-03", "preco": 409.00 },
+        { "data": "2026-06-11", "preco": 399.00 },
+        { "data": "2026-06-19", "preco": 389.00 },
+        { "data": "2026-06-27", "preco": 379.00 },
+        { "data": "2026-07-05", "preco": 369.00 },
+        { "data": "2026-07-13", "preco": 359.00 },
+        { "data": "2026-07-22", "preco": 349.00 }
+      ]
+    },
+    {
+      "id": "robo-aspirador",
+      "nome": "Robô aspirador 2 em 1",
+      "categoria": "Casa e Cozinha",
+      "imagem": "imagens/otimizadas/produtos/robo-aspirador.webp",
+      "alt": "Robô aspirador preto 2 em 1",
+      "precoReferencia": 1499.00,
+      "precoAtual": 1019.00,
+      "urlOferta": "",
+      "historico": [
+        { "data": "2026-04-24", "preco": 1499.00 },
+        { "data": "2026-05-02", "preco": 1449.00 },
+        { "data": "2026-05-10", "preco": 1399.00 },
+        { "data": "2026-05-18", "preco": 1349.00 },
+        { "data": "2026-05-26", "preco": 1299.00 },
+        { "data": "2026-06-03", "preco": 1249.00 },
+        { "data": "2026-06-11", "preco": 1199.00 },
+        { "data": "2026-06-19", "preco": 1149.00 },
+        { "data": "2026-06-27", "preco": 1099.00 },
+        { "data": "2026-07-05", "preco": 1069.00 },
+        { "data": "2026-07-13", "preco": 1049.00 },
+        { "data": "2026-07-22", "preco": 1019.00 }
+      ]
+    },
+    {
+      "id": "fone-bluetooth",
+      "nome": "Fone de ouvido bluetooth",
+      "categoria": "Eletrônicos",
+      "imagem": "imagens/otimizadas/produtos/fone-bluetooth.webp",
+      "alt": "Fone de ouvido bluetooth bege",
+      "precoReferencia": 349.00,
+      "precoAtual": 279.00,
+      "urlOferta": "",
+      "historico": [
+        { "data": "2026-04-24", "preco": 349.00 },
+        { "data": "2026-05-02", "preco": 339.00 },
+        { "data": "2026-05-10", "preco": 329.00 },
+        { "data": "2026-05-18", "preco": 319.00 },
+        { "data": "2026-05-26", "preco": 309.00 },
+        { "data": "2026-06-03", "preco": 319.00 },
+        { "data": "2026-06-11", "preco": 299.00 },
+        { "data": "2026-06-19", "preco": 289.00 },
+        { "data": "2026-06-27", "preco": 299.00 },
+        { "data": "2026-07-05", "preco": 285.00 },
+        { "data": "2026-07-13", "preco": 279.00 },
+        { "data": "2026-07-22", "preco": 279.00 }
+      ]
+    },
+    {
+      "id": "cafeteira",
+      "nome": "Cafeteira elétrica",
+      "categoria": "Casa e Cozinha",
+      "imagem": "imagens/otimizadas/produtos/cafeteira.webp",
+      "alt": "Cafeteira elétrica preta e inox",
+      "precoReferencia": 219.00,
+      "precoAtual": 179.00,
+      "urlOferta": "",
+      "historico": [
+        { "data": "2026-04-24", "preco": 219.00 },
+        { "data": "2026-05-02", "preco": 209.00 },
+        { "data": "2026-05-10", "preco": 199.00 },
+        { "data": "2026-05-18", "preco": 205.00 },
+        { "data": "2026-05-26", "preco": 195.00 },
+        { "data": "2026-06-03", "preco": 189.00 },
+        { "data": "2026-06-11", "preco": 199.00 },
+        { "data": "2026-06-19", "preco": 185.00 },
+        { "data": "2026-06-27", "preco": 189.00 },
+        { "data": "2026-07-05", "preco": 179.00 },
+        { "data": "2026-07-13", "preco": 184.00 },
+        { "data": "2026-07-22", "preco": 179.00 }
+      ]
+    }
+  ]
+}

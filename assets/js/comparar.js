@@ -9,6 +9,24 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
   const compartilhar = document.querySelector("#compartilhar-comparacao-pagina");
   const moeda = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
   const LOJAS_PREFERIDAS = ["Amazon", "Mercado Livre", "Shopee", "Casas Bahia"];
+  const IDENTIDADE_LOJAS = {
+    Amazon: {
+      slug: "amazon",
+      logo: "/imagens/logo/amazon-color-svgrepo-com.svg"
+    },
+    "Mercado Livre": {
+      slug: "mercado-livre",
+      logo: "/imagens/logo/mercado-libre-svgrepo-com.svg"
+    },
+    Shopee: {
+      slug: "shopee",
+      logo: "/imagens/logo/shopee.png"
+    },
+    "Casas Bahia": {
+      slug: "casas-bahia",
+      sigla: "CB"
+    }
+  };
   let catalogo = [];
 
   function carregarCatalogo() {
@@ -67,6 +85,33 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
     return elemento;
   }
 
+  function criarIdentidadeLoja(loja) {
+    const identidade = IDENTIDADE_LOJAS[loja] || {
+      slug: "loja-parceira",
+      sigla: (loja || "Loja").slice(0, 2).toUpperCase()
+    };
+    const grupo = criarElemento("span", "identidade-loja");
+
+    if (identidade.logo) {
+      const marca = criarElemento("span", "marca-loja");
+      const logo = document.createElement("img");
+      logo.className = `logo-loja logo-loja-${identidade.slug}`;
+      logo.src = identidade.logo;
+      logo.alt = "";
+      logo.width = 38;
+      logo.height = 28;
+      marca.append(logo);
+      grupo.append(marca);
+    } else {
+      const sigla = criarElemento("span", "sigla-loja", identidade.sigla);
+      sigla.setAttribute("aria-hidden", "true");
+      grupo.append(sigla);
+    }
+
+    grupo.append(criarElemento("strong", "", loja));
+    return { grupo, slug: identidade.slug };
+  }
+
   function atualizarUrl(ids) {
     const url = new URL(window.location.href);
     if (ids.length) url.searchParams.set("produtos", ids.join(","));
@@ -120,12 +165,14 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
     if (ofertasAtivas.length) {
       ofertasAtivas.forEach((oferta) => {
         const link = criarElemento("a", "botao-loja-ranking");
+        const identidade = criarIdentidadeLoja(oferta.loja);
+        link.dataset.loja = identidade.slug;
         link.href = oferta.url;
         link.target = "_blank";
         link.rel = "sponsored nofollow noopener noreferrer";
         link.setAttribute("aria-label", `Ver ${produto.nome} na ${oferta.loja}`);
         link.append(
-          criarElemento("strong", "", oferta.loja),
+          identidade.grupo,
           criarElemento("small", "", Number(oferta.preco) > 0 ? moeda.format(Number(oferta.preco)) : "Ver oferta")
         );
         link.addEventListener("click", () => registrarCliqueOferta(produto, oferta));

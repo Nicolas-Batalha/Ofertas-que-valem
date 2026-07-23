@@ -4,6 +4,24 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
   "use strict";
   const moeda = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
   const LOJAS_PREFERIDAS = ["Amazon", "Mercado Livre", "Shopee", "Casas Bahia"];
+  const IDENTIDADE_LOJAS = {
+    Amazon: {
+      slug: "amazon",
+      logo: "/imagens/logo/amazon-color-svgrepo-com.svg"
+    },
+    "Mercado Livre": {
+      slug: "mercado-livre",
+      logo: "/imagens/logo/mercado-libre-svgrepo-com.svg"
+    },
+    Shopee: {
+      slug: "shopee",
+      logo: "/imagens/logo/shopee.png"
+    },
+    "Casas Bahia": {
+      slug: "casas-bahia",
+      sigla: "CB"
+    }
+  };
 
   function carregarCatalogo() {
     return carregarCatalogoFirestore();
@@ -44,6 +62,39 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "clique_oferta", ...detalhe });
     window.dispatchEvent(new CustomEvent("ofertas-que-valem:clique-oferta", { detail: detalhe }));
+  }
+
+  function criarIdentidadeLoja(loja) {
+    const identidade = IDENTIDADE_LOJAS[loja] || {
+      slug: "loja-parceira",
+      sigla: (loja || "Loja").slice(0, 2).toUpperCase()
+    };
+    const grupo = document.createElement("span");
+    grupo.className = "identidade-loja";
+
+    if (identidade.logo) {
+      const marca = document.createElement("span");
+      marca.className = "marca-loja";
+      const logo = document.createElement("img");
+      logo.className = `logo-loja logo-loja-${identidade.slug}`;
+      logo.src = identidade.logo;
+      logo.alt = "";
+      logo.width = 38;
+      logo.height = 28;
+      marca.append(logo);
+      grupo.append(marca);
+    } else {
+      const sigla = document.createElement("span");
+      sigla.className = "sigla-loja";
+      sigla.setAttribute("aria-hidden", "true");
+      sigla.textContent = identidade.sigla;
+      grupo.append(sigla);
+    }
+
+    const nome = document.createElement("strong");
+    nome.textContent = loja;
+    grupo.append(nome);
+    return { grupo, slug: identidade.slug };
   }
 
   const CHAVE_GUIAS = "ofertas-que-valem:guias-salvos";
@@ -170,13 +221,13 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
               ? "botao-loja-ranking"
               : "botao-loja-ranking botao-loja-ranking-pendente";
 
-            const nome = document.createElement("strong");
-            nome.textContent = oferta.loja;
+            const identidade = criarIdentidadeLoja(oferta.loja);
+            elemento.dataset.loja = identidade.slug;
             const detalhe = document.createElement("small");
             detalhe.textContent = oferta.url
               ? (oferta.preco > 0 ? moeda.format(oferta.preco) : "Ver oferta")
               : "Link pendente";
-            elemento.append(nome, detalhe);
+            elemento.append(identidade.grupo, detalhe);
 
             if (oferta.url) {
               elemento.href = oferta.url;

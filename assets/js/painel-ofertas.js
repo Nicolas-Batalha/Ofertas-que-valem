@@ -23,20 +23,62 @@ const formularioLogin = document.querySelector("#formulario-login-painel");
 const formularioOfertas = document.querySelector("#formulario-ofertas-painel");
 const statusLogin = document.querySelector("#status-login-painel");
 const statusOfertas = document.querySelector("#status-ofertas-painel");
+const seletorPasta = document.querySelector("#pasta-painel");
 const seletorProduto = document.querySelector("#produto-painel");
+const buscaProduto = document.querySelector("#busca-produto-painel");
+const resumoPasta = document.querySelector("#resumo-pasta-painel");
 const gradeLojas = document.querySelector("#grade-lojas-painel");
 const botaoSalvar = document.querySelector("#salvar-ofertas-painel");
+const produtoSelecionado = document.querySelector("#produto-selecionado-painel");
 const imagemProduto = document.querySelector("#imagem-produto-painel");
 const nomeProduto = document.querySelector("#nome-produto-painel");
 const idProduto = document.querySelector("#id-produto-painel");
+const pastaProdutoSelecionado = document.querySelector("#pasta-produto-painel");
 const usuarioPainel = document.querySelector("#usuario-painel");
 const botaoSair = document.querySelector("#sair-painel");
+const voltarGuia = document.querySelector("#voltar-guia-painel");
 
 let autenticacao;
 let banco;
 let produtos = [];
 let ofertas = [];
 let carregandoSessao = false;
+
+const NOMES_PASTAS = {
+  "air-fryer": "Air Fryers",
+  cafeteira: "Cafeteiras elétricas",
+  "robo-aspirador": "Robôs aspiradores",
+  "fone-bluetooth": "Fones Bluetooth"
+};
+
+function normalizarTexto(valor = "") {
+  return valor
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function dadosPastaProduto(produto) {
+  const arquivoGuia = (produto.slugGuia || "")
+    .split("/")
+    .pop()
+    ?.replace(/\.html$/i, "");
+  const identificador = arquivoGuia || normalizarTexto(produto.categoria).replace(/[^a-z0-9]+/g, "-");
+  const nomeAutomatico = identificador
+    .split("-")
+    .filter(Boolean)
+    .map((parte) => parte.charAt(0).toUpperCase() + parte.slice(1))
+    .join(" ");
+  const partesImagem = (produto.imagem || "").split("/").filter(Boolean);
+  partesImagem.pop();
+
+  return {
+    id: identificador,
+    nome: NOMES_PASTAS[identificador] || nomeAutomatico || "Outros produtos",
+    caminho: partesImagem.length ? `/${partesImagem.join("/")}/` : "/imagens/"
+  };
+}
 
 function definirStatus(elemento, mensagem, tipo = "") {
   elemento.textContent = mensagem;
@@ -106,12 +148,23 @@ function ofertaAtual(produtoId, loja) {
 
 function atualizarProdutoSelecionado() {
   const produto = produtos.find((item) => item.id === seletorProduto.value);
-  if (!produto) return;
+  if (!produto) {
+    produtoSelecionado.hidden = true;
+    botaoSalvar.disabled = true;
+    voltarGuia.setAttribute("aria-disabled", "true");
+    return;
+  }
 
+  const pasta = dadosPastaProduto(produto);
+  produtoSelecionado.hidden = false;
+  botaoSalvar.disabled = false;
   imagemProduto.src = produto.imagem;
   imagemProduto.alt = produto.alt || produto.nome;
   nomeProduto.textContent = produto.nome;
-  idProduto.textContent = produto.id;
+  pastaProdutoSelecionado.textContent = pasta.nome;
+  idProduto.textContent = `Código: ${produto.id}`;
+  voltarGuia.href = `/${produto.slugGuia}`;
+  voltarGuia.removeAttribute("aria-disabled");
 
   [...gradeLojas.querySelectorAll("[data-loja]")].forEach((grupo) => {
     const oferta = ofertaAtual(produto.id, grupo.dataset.loja);
@@ -121,15 +174,74 @@ function atualizarProdutoSelecionado() {
   definirStatus(statusOfertas, "");
 }
 
-function montarProdutos() {
-  seletorProduto.replaceChildren(...produtos.map((produto) => {
-    const opcao = document.createElement("option");
-    opcao.value = produto.id;
-    opcao.textContent = `${produto.nome} — ${produto.categoria}`;
-    return opcao;
-  }));
-  gradeLojas.replaceChildren(...LOJAS.map(campoLoja));
+function produtosDaPasta() {
+  return produtos.filter((produto) => dadosPastaProduto(produto).id === seletorPasta.value);
+}
+
+function atualizarListaProdutos() {
+  const termo = normalizarTexto(buscaProduto.value);
+  const palavras = termo.split(/\s+/).filter(Boolean);
+  const produtosPasta = produtosDaPasta();
+  const encontrados = produtosPasta.filter((produto) => {
+    const conteudo = normalizarTexto([
+      produto.nome,
+      produto.perfil,
+      produto.termos,
+      ...(produto.especificacoes || [])
+    ].join(" "));
+    return palavras.every((palavra) => conteudo.includes(palavra));
+  });
+  const selecaoAnterior = seletorProduto.value;
+
+  if (!encontrados.length) {
+    const opcaoVazia = document.createElement("option");
+    opcaoVazia.value = "";
+    opcaoVazia.textContent = "Nenhum produto encontrado";
+    seletorProduto.replaceChildren(opcaoVazia);
+    seletorProduto.disabled = true;
+  } else {
+    seletorProduto.disabled = false;
+    seletorProduto.replaceChildren(...encontrados.map((produto) => {
+      const opcao = document.createElement("option");
+      opcao.value = produto.id;
+      opcao.textContent = produto.nome;
+      return opcao;
+    }));
+    if (encontrados.some((produto) => produto.id === selecaoAnterior)) {
+      seletorProduto.value = selecaoAnterior;
+    }
+  }
+
+  const pastaAtual = produtosPasta[0] ? dadosPastaProduto(produtosPasta[0]) : null;
+  resumoPasta.textContent = pastaAtual
+    ? `${produtosPasta.length} ${produtosPasta.length === 1 ? "produto" : "produtos"} nesta pasta · Imagens em ${pastaAtual.caminho}`
+    : "Esta pasta ainda não possui produtos.";
   atualizarProdutoSelecionado();
+}
+
+function montarPastas() {
+  const pastas = new Map();
+  produtos.forEach((produto) => {
+    const pasta = dadosPastaProduto(produto);
+    if (!pastas.has(pasta.id)) pastas.set(pasta.id, { ...pasta, quantidade: 0 });
+    pastas.get(pasta.id).quantidade += 1;
+  });
+
+  const opcoes = [...pastas.values()]
+    .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
+    .map((pasta) => {
+      const opcao = document.createElement("option");
+      opcao.value = pasta.id;
+      opcao.textContent = `${pasta.nome} (${pasta.quantidade})`;
+      return opcao;
+    });
+  seletorPasta.replaceChildren(...opcoes);
+}
+
+function montarProdutos() {
+  gradeLojas.replaceChildren(...LOJAS.map(campoLoja));
+  montarPastas();
+  atualizarListaProdutos();
 }
 
 async function carregarAdministracao(usuario) {
@@ -197,6 +309,11 @@ formularioLogin.addEventListener("submit", async (evento) => {
   }
 });
 
+seletorPasta.addEventListener("change", () => {
+  buscaProduto.value = "";
+  atualizarListaProdutos();
+});
+buscaProduto.addEventListener("input", atualizarListaProdutos);
 seletorProduto.addEventListener("change", atualizarProdutoSelecionado);
 
 formularioOfertas.addEventListener("submit", async (evento) => {

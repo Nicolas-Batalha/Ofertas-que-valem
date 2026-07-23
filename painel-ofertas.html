@@ -20,7 +20,7 @@
         <span class="marca-simbolo" aria-hidden="true"><span>✓</span></span>
         <span class="marca-texto">Ofertas <small>que Valem</small></span>
       </a>
-      <a class="voltar-painel" href="/guias/air-fryer.html">Voltar ao guia</a>
+      <a class="voltar-painel" id="voltar-guia-painel" href="/guias/air-fryer.html">Abrir guia selecionado</a>
     </div>
   </header>
 
@@ -62,16 +62,45 @@
       </header>
 
       <form class="formulario-ofertas-painel" id="formulario-ofertas-painel">
-        <label class="campo-painel">
-          <span>Produto</span>
-          <select id="produto-painel" required></select>
-        </label>
+        <section class="organizador-produtos-painel" aria-labelledby="titulo-organizador-painel">
+          <header class="cabecalho-organizador-painel">
+            <span class="numero-etapa-painel" aria-hidden="true">1</span>
+            <div>
+              <h3 id="titulo-organizador-painel">Escolha a pasta e o produto</h3>
+              <p>Os produtos ficam separados automaticamente pelo guia ao qual pertencem.</p>
+            </div>
+          </header>
+
+          <div class="grade-organizador-painel">
+            <label class="campo-painel">
+              <span>Pasta de produtos</span>
+              <select id="pasta-painel" required></select>
+            </label>
+            <label class="campo-painel">
+              <span>Buscar nesta pasta</span>
+              <input id="busca-produto-painel" type="search" placeholder="Digite marca ou modelo" autocomplete="off">
+            </label>
+            <label class="campo-painel campo-produto-painel">
+              <span>Produto</span>
+              <select id="produto-painel" required></select>
+            </label>
+          </div>
+          <p class="resumo-pasta-painel" id="resumo-pasta-painel"></p>
+        </section>
 
         <div class="produto-selecionado-painel" id="produto-selecionado-painel">
           <img id="imagem-produto-painel" src="" alt="" width="84" height="84">
-          <div><strong id="nome-produto-painel"></strong><small id="id-produto-painel"></small></div>
+          <div>
+            <span class="pasta-produto-painel" id="pasta-produto-painel"></span>
+            <strong id="nome-produto-painel"></strong>
+            <small id="id-produto-painel"></small>
+          </div>
         </div>
 
+        <header class="cabecalho-etapa-lojas">
+          <span class="numero-etapa-painel" aria-hidden="true">2</span>
+          <div><h3>Cadastre os links das lojas</h3><p>Preencha somente as lojas em que você possui uma oferta válida.</p></div>
+        </header>
         <div class="grade-lojas-painel" id="grade-lojas-painel"></div>
 
         <div class="acoes-painel">

@@ -583,6 +583,326 @@
       "loja": "",
       "slugGuia": "guias/air-fryer.html",
       "publicado": true
+    },
+    {
+      "id": "cafeteira-mondial-pratic-cn01-20x",
+      "nome": "Mondial Pratic CN-01-20X",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/41w-XKoHeRL._SL500_.jpg",
+      "alt": "Cafeteira elétrica Mondial Pratic preta com jarra de vidro",
+      "nota": 9.4,
+      "perfil": "Melhor equilíbrio geral",
+      "termos": "cafeteira elétrica mondial pratic cn 01 20x 20 xícaras jarra vidro",
+      "especificacoes": [
+        "Prepara até 20 cafés",
+        "Jarra de vidro",
+        "Sistema corta-pingos",
+        "Base com aquecimento"
+      ],
+      "pros": [
+        "boa capacidade para uso doméstico",
+        "indicador de nível de água"
+      ],
+      "contras": [
+        "jarra de vidro exige cuidado",
+        "sem programação automática"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-britania-temp-15",
+      "nome": "Britânia Temp 15 Xícaras",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/41OZ5xhp-bL._SL500_.jpg",
+      "alt": "Cafeteira elétrica Britânia Temp preta e inox",
+      "nota": 9.2,
+      "perfil": "Melhor custo-benefício",
+      "termos": "cafeteira elétrica britânia temp 15 xícaras inox filtro permanente",
+      "especificacoes": [
+        "Prepara até 15 cafés",
+        "Filtro permanente",
+        "Sistema corta-pingos",
+        "Placa de aquecimento"
+      ],
+      "pros": [
+        "dispensa filtro de papel",
+        "uso simples no dia a dia"
+      ],
+      "contras": [
+        "capacidade menor que modelos familiares",
+        "sem timer"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-oster-ocaf300",
+      "nome": "Oster Inox Compacta OCAF300",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/31rhTdkBR0L._SL500_.jpg",
+      "alt": "Cafeteira Oster Inox Compacta OCAF300 com jarra de vidro",
+      "nota": 9.1,
+      "perfil": "Melhor cafeteira compacta",
+      "termos": "cafeteira elétrica oster inox compacta ocaf300 750 ml 19 cafés",
+      "especificacoes": [
+        "Capacidade de 750 ml",
+        "Prepara até 19 cafés de 40 ml",
+        "Jarra de vidro",
+        "Filtro lavável e reutilizável"
+      ],
+      "pros": [
+        "design compacto",
+        "função manter aquecido"
+      ],
+      "contras": [
+        "volume limitado para grupos maiores",
+        "jarra de vidro exige cuidado"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-electrolux-ecm30",
+      "nome": "Electrolux Experience ECM30",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/31t2VLsHjbL._SL500_.jpg",
+      "alt": "Cafeteira elétrica programável Electrolux ECM30 preta e inox",
+      "nota": 9,
+      "perfil": "Melhor para famílias e escritórios",
+      "termos": "cafeteira elétrica electrolux experience ecm30 programável 1,5 litros 38 xícaras",
+      "especificacoes": [
+        "Jarra de 1,5 L",
+        "Prepara até 38 cafés de 40 ml",
+        "Timer de 24 horas",
+        "Ajuste de intensidade AromaStrength"
+      ],
+      "pros": [
+        "grande capacidade",
+        "programação automática"
+      ],
+      "contras": [
+        "ocupa mais espaço",
+        "mais funções para configurar"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-mondial-dolce-arome",
+      "nome": "Mondial Dolce Arome 15",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/41z+zYCAHeL._SL500_.jpg",
+      "alt": "Cafeteira Mondial Dolce Arome preta com jarra em inox",
+      "nota": 8.9,
+      "perfil": "Melhor com jarra em inox",
+      "termos": "cafeteira elétrica mondial dolce arome 15 xícaras jarra inox",
+      "especificacoes": [
+        "Prepara até 15 cafés",
+        "Jarra em inox",
+        "Filtro permanente",
+        "Sistema corta-pingos"
+      ],
+      "pros": [
+        "jarra resistente",
+        "base mantém o café aquecido"
+      ],
+      "contras": [
+        "não permite ver o volume pela jarra",
+        "capacidade intermediária"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-blackdecker-cm15",
+      "nome": "BLACK+DECKER Coffee Time CM15",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/41EWnySHlkL._SL500_.jpg",
+      "alt": "Cafeteira BLACK+DECKER Coffee Time CM15 com jarra em inox",
+      "nota": 8.8,
+      "perfil": "Melhor opção simples com jarra inox",
+      "termos": "cafeteira elétrica black decker coffee time cm15 18 cafés jarra inox",
+      "especificacoes": [
+        "Prepara até 18 cafés",
+        "Jarra em inox",
+        "Potência de 600 W em 127 V",
+        "Filtro permanente e removível"
+      ],
+      "pros": [
+        "jarra resistente",
+        "sistema corta-pingos"
+      ],
+      "contras": [
+        "sem timer",
+        "recursos básicos"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-electrolux-ecm25",
+      "nome": "Electrolux Experience ECM25",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/41guNQ6--lL._SL500_.jpg",
+      "alt": "Cafeteira elétrica programável Electrolux ECM25 preta e inox",
+      "nota": 8.7,
+      "perfil": "Melhor programável intermediária",
+      "termos": "cafeteira elétrica electrolux experience ecm25 programável timer 1,2 litros",
+      "especificacoes": [
+        "Jarra de 1,2 L",
+        "Prepara até 30 cafés de 40 ml",
+        "Timer de 24 horas",
+        "Potência de 800 W"
+      ],
+      "pros": [
+        "desligamento automático",
+        "filtro permanente removível"
+      ],
+      "contras": [
+        "corpo maior que modelos compactos",
+        "jarra de vidro exige cuidado"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-mondial-smart-c42",
+      "nome": "Mondial Smart Coffee C-42-2X-BI",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/31XsPqLeTzL._SL500_.jpg",
+      "alt": "Cafeteira Mondial Smart Coffee com duas xícaras brancas",
+      "nota": 8.6,
+      "perfil": "Melhor para duas xícaras",
+      "termos": "cafeteira elétrica mondial smart coffee c42 duas xícaras 120 ml",
+      "especificacoes": [
+        "Prepara 2 cafés ao mesmo tempo",
+        "Duas xícaras de 120 ml",
+        "Potência de 500 W",
+        "Filtro permanente"
+      ],
+      "pros": [
+        "compacta para bancadas pequenas",
+        "serve direto nas xícaras"
+      ],
+      "contras": [
+        "não prepara uma jarra",
+        "capacidade limitada"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-philips-ep1220",
+      "nome": "Philips Walita Série 1200 EP1220/15",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/41XnFjxzgrL._SL500_.jpg",
+      "alt": "Cafeteira espresso automática Philips Walita Série 1200 EP1220",
+      "nota": 8.5,
+      "perfil": "Melhor espresso automática",
+      "termos": "cafeteira espresso automática philips walita ep1220 moedor painel touch",
+      "especificacoes": [
+        "Moedor com 12 ajustes",
+        "Três níveis de intensidade",
+        "Painel touch",
+        "Vaporizador de leite"
+      ],
+      "pros": [
+        "moe o grão na hora",
+        "ajustes de intensidade e volume"
+      ],
+      "contras": [
+        "exige limpeza e descalcificação",
+        "ocupa faixa de preço superior"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
+    },
+    {
+      "id": "cafeteira-tres-passione",
+      "nome": "TRES Passione",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/cozinha/cafeteira/31aSyi49inS._SL500_.jpg",
+      "alt": "Cafeteira de cápsulas TRES Passione preta",
+      "nota": 8.4,
+      "perfil": "Melhor cafeteira de cápsulas compacta",
+      "termos": "cafeteira cápsulas tres corações passione compacta 650 ml",
+      "especificacoes": [
+        "Reservatório de 650 ml",
+        "Sistema de cápsulas TRES",
+        "Dosagem automática",
+        "Prepara cafés e outras bebidas"
+      ],
+      "pros": [
+        "compacta e simples de usar",
+        "variedade de bebidas"
+      ],
+      "contras": [
+        "compatível apenas com cápsulas do sistema",
+        "gera custo e descarte de cápsulas"
+      ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "ofertas": [],
+      "historico": [],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": true
     }
   ],
   "demonstrativo": false

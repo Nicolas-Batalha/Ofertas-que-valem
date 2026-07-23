@@ -19,7 +19,9 @@
       return resposta.json();
     })
     .then((catalogo) => {
-      const produtos = Array.isArray(catalogo.produtos) ? catalogo.produtos : [];
+      const produtos = Array.isArray(catalogo.produtos)
+        ? catalogo.produtos.filter((produto) => produto.publicado !== false)
+        : [];
       if (!produtos.length) return;
 
       const lista = document.createElement("datalist");

@@ -141,7 +141,9 @@ async function carregarAdministracao(usuario) {
   if (!respostaCatalogo.ok) throw new Error("Não foi possível carregar o catálogo.");
   const catalogo = await respostaCatalogo.json();
   produtos = Array.isArray(catalogo.produtos)
-    ? [...catalogo.produtos].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
+    ? catalogo.produtos
+        .filter((produto) => produto.publicado !== false)
+        .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
     : [];
 
   const resultado = await getDocs(collection(banco, "ofertas"));

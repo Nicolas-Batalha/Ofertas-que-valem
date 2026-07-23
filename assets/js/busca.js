@@ -1,3 +1,5 @@
+import { carregarCatalogo as carregarCatalogoFirebase } from "./firebase-ofertas.js";
+
 (() => {
   "use strict";
 
@@ -46,6 +48,7 @@
   function correspondePreco(produto, faixa) {
     const preco = Number(produto.precoAtual) || 0;
     if (!faixa) return true;
+    if (preco <= 0) return false;
     if (faixa === "ate-300") return preco <= 300;
     if (faixa === "300-700") return preco > 300 && preco <= 700;
     if (faixa === "700-1200") return preco > 700 && preco <= 1200;
@@ -127,9 +130,10 @@
     const titulo = criarElemento("h2", "", produto.nome);
     const perfil = criarElemento("p", "resultado-perfil", produto.perfil || "Perfil versátil");
     const dados = criarElemento("div", "resultado-dados");
+    const preco = Number(produto.precoAtual) || 0;
     dados.append(
       criarElemento("strong", "resultado-nota", `Nota ${Number(produto.nota || 0).toLocaleString("pt-BR", { minimumFractionDigits: 1 })}`),
-      criarElemento("strong", "resultado-preco", `A partir de ${moeda.format(Number(produto.precoAtual) || 0)}`)
+      criarElemento("strong", "resultado-preco", preco > 0 ? `A partir de ${moeda.format(preco)}` : "Consultar oferta")
     );
 
     const lista = criarElemento("ul", "resultado-especificacoes");
@@ -184,7 +188,11 @@
     );
 
     encontrados.sort((a, b) => {
-      if (ordenacao.value === "menor-preco") return Number(a.precoAtual) - Number(b.precoAtual);
+      if (ordenacao.value === "menor-preco") {
+        const precoA = Number(a.precoAtual) > 0 ? Number(a.precoAtual) : Number.POSITIVE_INFINITY;
+        const precoB = Number(b.precoAtual) > 0 ? Number(b.precoAtual) : Number.POSITIVE_INFINITY;
+        return precoA - precoB;
+      }
       if (ordenacao.value === "maior-nota") return Number(b.nota) - Number(a.nota);
       if (ordenacao.value === "nome") return a.nome.localeCompare(b.nome, "pt-BR");
       const consultaNormalizada = normalizar(consulta);
@@ -253,13 +261,11 @@
     campo.focus();
   });
 
-  fetch("/assets/data/produtos.json", { cache: "no-store" })
-    .then((resposta) => {
-      if (!resposta.ok) throw new Error("Catálogo indisponível");
-      return resposta.json();
-    })
+  carregarCatalogoFirebase()
     .then((catalogo) => {
-      produtos = Array.isArray(catalogo.produtos) ? catalogo.produtos : [];
+      produtos = Array.isArray(catalogo.produtos)
+        ? catalogo.produtos.filter((produto) => produto.publicado !== false)
+        : [];
       preencherOpcoes();
       aplicarParametros();
       aplicarFiltros();

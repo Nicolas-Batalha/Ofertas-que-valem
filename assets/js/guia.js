@@ -220,8 +220,11 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
       botao.textContent = "Ver oferta" + (produto.loja ? " em " + produto.loja : "");
       if (status) status.textContent = "Oferta cadastrada e pronta para consulta na loja.";
       if (preco) {
+        const precoVerificado = Number(produto.precoAtual) || 0;
         preco.hidden = false;
-        preco.textContent = "Preço cadastrado: " + moeda.format(Number(produto.precoAtual));
+        preco.textContent = precoVerificado > 0
+          ? "Preço cadastrado: " + moeda.format(precoVerificado)
+          : "Consulte o preço atualizado na loja.";
       }
       botao.addEventListener("click", () => registrarCliqueOferta(produto, {
         loja: produto.loja,

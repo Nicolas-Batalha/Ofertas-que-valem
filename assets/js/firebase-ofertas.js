@@ -29,14 +29,12 @@ export function mesclarCatalogo(catalogo, registros) {
     ...catalogo,
     produtos: catalogo.produtos.map((produto) => {
       const remotas = porProduto.get(produto.id);
-      if (!remotas?.length) return produto;
-
       const ofertas = Array.isArray(produto.ofertas)
         ? produto.ofertas.map((oferta) => ({ ...oferta }))
         : [];
       const indicePorLoja = new Map(ofertas.map((oferta, indice) => [oferta.loja, indice]));
 
-      remotas.forEach((remota) => {
+      (remotas || []).forEach((remota) => {
         const oferta = {
           loja: remota.loja,
           url: remota.ativo && remota.url ? remota.url : "",
@@ -51,7 +49,20 @@ export function mesclarCatalogo(catalogo, registros) {
         }
       });
 
-      return { ...produto, ofertas };
+      const ativas = ofertas.filter((oferta) => oferta.url);
+      const comPreco = ativas
+        .filter((oferta) => Number(oferta.preco) > 0)
+        .sort((a, b) => Number(a.preco) - Number(b.preco));
+      const principal = comPreco[0] || ativas[0];
+
+      return {
+        ...produto,
+        ofertas,
+        precoAtual: principal && Number(principal.preco) > 0 ? Number(principal.preco) : 0,
+        precoReferencia: 0,
+        urlOferta: principal?.url || "",
+        loja: principal?.loja || ""
+      };
     })
   };
 }

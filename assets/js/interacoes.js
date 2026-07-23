@@ -1,3 +1,5 @@
+import { carregarCatalogo as carregarCatalogoFirebase } from "./firebase-ofertas.js";
+
 (() => {
   "use strict";
 
@@ -132,9 +134,9 @@
 
   function atualizarProdutoNaPagina(produto, catalogo) {
     catalogoPorId.set(produto.id, produto);
-    const demonstrativo = catalogo.demonstrativo !== false;
     const precoReferencia = Number(produto.precoReferencia);
     const precoAtual = Number(produto.precoAtual);
+    const precoDisponivel = precoAtual > 0;
     const desconto = calcularDesconto(precoReferencia, precoAtual);
     const historico = Array.isArray(produto.historico) ? produto.historico : [];
     const precosHistoricos = historico.map((item) => Number(item.preco)).filter(Number.isFinite);
@@ -156,12 +158,22 @@
         imagem.src = produto.imagem;
         imagem.alt = produto.alt || produto.nome;
       }
-      if (referencia) referencia.textContent = formatadorMoeda.format(precoReferencia);
-      if (atual) atual.textContent = formatadorMoeda.format(precoAtual);
-      if (selo) selo.textContent = `-${desconto}%`;
+      if (referencia) {
+        referencia.hidden = !precoDisponivel || precoReferencia <= precoAtual;
+        referencia.textContent = precoReferencia > 0 ? formatadorMoeda.format(precoReferencia) : "";
+      }
+      if (atual) atual.textContent = precoDisponivel ? formatadorMoeda.format(precoAtual) : "Consultar oferta";
+      if (selo) {
+        selo.hidden = desconto <= 0;
+        selo.textContent = desconto > 0 ? `-${desconto}%` : "";
+      }
       if (resumo) {
-        if (demonstrativo) {
-          resumo.textContent = "Histórico demonstrativo";
+        if (!precoDisponivel) {
+          resumo.textContent = produto.urlOferta
+            ? "Consulte o valor atualizado na loja"
+            : "Preço publicado após verificação da oferta";
+        } else if (!historico.length) {
+          resumo.textContent = "Preço atual informado pela loja";
         } else {
           const diferenca = precoAtual - menorPreco;
           resumo.textContent = diferenca <= 0.009
@@ -169,7 +181,10 @@
             : `${formatadorMoeda.format(diferenca)} acima do menor preço`;
         }
       }
-      if (grafico) criarGraficoPreco(grafico, historico, produto.nome);
+      if (grafico) {
+        grafico.hidden = !precoDisponivel || historico.length < 2;
+        if (!grafico.hidden) criarGraficoPreco(grafico, historico, produto.nome);
+      }
 
       if (link && produto.urlOferta) {
         const icone = document.createElement("span");
@@ -192,28 +207,32 @@
         link.dataset.linkReal = "guide";
       }
 
-      cartao.classList.toggle("dados-demonstrativos", demonstrativo);
-      cartao.title = demonstrativo
-        ? "Dados demonstrativos — links de loja ainda não conectados"
-        : `Preço atualizado em ${formatadorData.format(new Date(catalogo.atualizadoEm))} · ${catalogo.fonte}`;
+      cartao.classList.remove("dados-demonstrativos");
+      cartao.classList.toggle("sem-preco-verificado", !precoDisponivel);
+      cartao.title = precoDisponivel
+        ? `Preço cadastrado em ${formatadorData.format(new Date(catalogo.atualizadoEm))} · ${catalogo.fonte}`
+        : "O site não publica preços sem uma oferta verificada";
     }
 
     selecionarTodos(`[data-desconto-produto="${produto.id}"]`).forEach((selo) => {
-      selo.textContent = `-${desconto}%`;
+      selo.hidden = desconto <= 0;
+      selo.textContent = desconto > 0 ? `-${desconto}%` : "";
     });
     selecionarTodos(`[data-preco-produto="${produto.id}"]`).forEach((preco) => {
-      preco.textContent = formatadorMoeda.format(precoAtual).replace(",00", "");
+      preco.textContent = precoDisponivel
+        ? formatadorMoeda.format(precoAtual).replace(",00", "")
+        : "Consultar oferta";
     });
   }
 
   async function carregarCatalogoPrecos() {
     try {
-      const resposta = await fetch("/assets/data/produtos.json", { cache: "no-store" });
-      if (!resposta.ok) throw new Error(`Falha ao carregar preços: ${resposta.status}`);
-      const catalogo = await resposta.json();
+      const catalogo = await carregarCatalogoFirebase();
       if (!Array.isArray(catalogo.produtos)) throw new Error("Catálogo de preços inválido");
-      catalogo.produtos.forEach((produto) => atualizarProdutoNaPagina(produto, catalogo));
-      document.documentElement.dataset.precos = catalogo.demonstrativo !== false ? "demonstrativos" : "verificados";
+      catalogo.produtos
+        .filter((produto) => produto.publicado !== false)
+        .forEach((produto) => atualizarProdutoNaPagina(produto, catalogo));
+      document.documentElement.dataset.precos = "reais";
     } catch (erro) {
       document.documentElement.dataset.precos = "reserva";
       console.warn("Os dados de reserva do HTML foram mantidos.", erro);

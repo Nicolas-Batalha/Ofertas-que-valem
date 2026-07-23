@@ -180,7 +180,9 @@ import { carregarCatalogo as carregarCatalogoFirestore } from "./firebase-oferta
 
   carregarCatalogo()
     .then((dados) => {
-      catalogo = Array.isArray(dados.produtos) ? dados.produtos : [];
+      catalogo = Array.isArray(dados.produtos)
+        ? dados.produtos.filter((produto) => produto.publicado !== false)
+        : [];
       renderizar();
     })
     .catch(() => {

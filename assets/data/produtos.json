@@ -1,6 +1,6 @@
 {
-  "atualizadoEm": "2026-07-22T13:17:00-03:00",
-  "fonte": "Catálogo local de demonstração",
+  "atualizadoEm": "2026-07-23T12:00:00-03:00",
+  "fonte": "Ofertas cadastradas e verificadas no painel",
   "produtos": [
     {
       "id": "air-fryer",
@@ -11,62 +11,18 @@
       "nota": 9.4,
       "perfil": "Equilíbrio para 2–4 pessoas",
       "termos": "air fryer fritadeira elétrica cozinha cesto médio família",
-      "especificacoes": ["Capacidade de 4,2 L", "Painel digital", "Cesto removível"],
-      "precoReferencia": 459,
-      "precoAtual": 349,
-      "urlOferta": "",
-      "historico": [
-        {
-          "data": "2026-04-24",
-          "preco": 459
-        },
-        {
-          "data": "2026-05-02",
-          "preco": 449
-        },
-        {
-          "data": "2026-05-10",
-          "preco": 439
-        },
-        {
-          "data": "2026-05-18",
-          "preco": 429
-        },
-        {
-          "data": "2026-05-26",
-          "preco": 439
-        },
-        {
-          "data": "2026-06-03",
-          "preco": 409
-        },
-        {
-          "data": "2026-06-11",
-          "preco": 399
-        },
-        {
-          "data": "2026-06-19",
-          "preco": 389
-        },
-        {
-          "data": "2026-06-27",
-          "preco": 379
-        },
-        {
-          "data": "2026-07-05",
-          "preco": 369
-        },
-        {
-          "data": "2026-07-13",
-          "preco": 359
-        },
-        {
-          "data": "2026-07-22",
-          "preco": 349
-        }
+      "especificacoes": [
+        "Capacidade de 4,2 L",
+        "Painel digital",
+        "Cesto removível"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": false
     },
     {
       "id": "robo-aspirador",
@@ -77,62 +33,18 @@
       "nota": 9.2,
       "perfil": "Limpeza diária automatizada",
       "termos": "robo aspirador limpeza casa pelos tapete aplicativo",
-      "especificacoes": ["Aspira e passa pano", "Retorno automático", "Controle por aplicativo"],
-      "precoReferencia": 1499,
-      "precoAtual": 1019,
-      "urlOferta": "",
-      "historico": [
-        {
-          "data": "2026-04-24",
-          "preco": 1499
-        },
-        {
-          "data": "2026-05-02",
-          "preco": 1449
-        },
-        {
-          "data": "2026-05-10",
-          "preco": 1399
-        },
-        {
-          "data": "2026-05-18",
-          "preco": 1349
-        },
-        {
-          "data": "2026-05-26",
-          "preco": 1299
-        },
-        {
-          "data": "2026-06-03",
-          "preco": 1249
-        },
-        {
-          "data": "2026-06-11",
-          "preco": 1199
-        },
-        {
-          "data": "2026-06-19",
-          "preco": 1149
-        },
-        {
-          "data": "2026-06-27",
-          "preco": 1099
-        },
-        {
-          "data": "2026-07-05",
-          "preco": 1069
-        },
-        {
-          "data": "2026-07-13",
-          "preco": 1049
-        },
-        {
-          "data": "2026-07-22",
-          "preco": 1019
-        }
+      "especificacoes": [
+        "Aspira e passa pano",
+        "Retorno automático",
+        "Controle por aplicativo"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/robo-aspirador.html"
+      "slugGuia": "guias/robo-aspirador.html",
+      "publicado": false
     },
     {
       "id": "fone-bluetooth",
@@ -140,65 +52,21 @@
       "categoria": "Eletrônicos",
       "imagem": "/imagens/otimizadas/produtos/fone-bluetooth.webp",
       "alt": "Fone de ouvido bluetooth bege",
-      "nota": 9.0,
+      "nota": 9,
       "perfil": "Uso diário e chamadas",
       "termos": "fone bluetooth headphone áudio musica microfone bateria",
-      "especificacoes": ["Conexão Bluetooth", "Microfone integrado", "Até 30 h com estojo"],
-      "precoReferencia": 349,
-      "precoAtual": 279,
-      "urlOferta": "",
-      "historico": [
-        {
-          "data": "2026-04-24",
-          "preco": 349
-        },
-        {
-          "data": "2026-05-02",
-          "preco": 339
-        },
-        {
-          "data": "2026-05-10",
-          "preco": 329
-        },
-        {
-          "data": "2026-05-18",
-          "preco": 319
-        },
-        {
-          "data": "2026-05-26",
-          "preco": 309
-        },
-        {
-          "data": "2026-06-03",
-          "preco": 319
-        },
-        {
-          "data": "2026-06-11",
-          "preco": 299
-        },
-        {
-          "data": "2026-06-19",
-          "preco": 289
-        },
-        {
-          "data": "2026-06-27",
-          "preco": 299
-        },
-        {
-          "data": "2026-07-05",
-          "preco": 285
-        },
-        {
-          "data": "2026-07-13",
-          "preco": 279
-        },
-        {
-          "data": "2026-07-22",
-          "preco": 279
-        }
+      "especificacoes": [
+        "Conexão Bluetooth",
+        "Microfone integrado",
+        "Até 30 h com estojo"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/fone-bluetooth.html"
+      "slugGuia": "guias/fone-bluetooth.html",
+      "publicado": false
     },
     {
       "id": "cafeteira",
@@ -209,62 +77,18 @@
       "nota": 8.8,
       "perfil": "Café diário para família",
       "termos": "cafeteira elétrica café filtro jarra cozinha",
-      "especificacoes": ["Jarra de 1,2 L", "Filtro reutilizável", "Sistema corta-pingos"],
-      "precoReferencia": 219,
-      "precoAtual": 179,
-      "urlOferta": "",
-      "historico": [
-        {
-          "data": "2026-04-24",
-          "preco": 219
-        },
-        {
-          "data": "2026-05-02",
-          "preco": 209
-        },
-        {
-          "data": "2026-05-10",
-          "preco": 199
-        },
-        {
-          "data": "2026-05-18",
-          "preco": 205
-        },
-        {
-          "data": "2026-05-26",
-          "preco": 195
-        },
-        {
-          "data": "2026-06-03",
-          "preco": 189
-        },
-        {
-          "data": "2026-06-11",
-          "preco": 199
-        },
-        {
-          "data": "2026-06-19",
-          "preco": 185
-        },
-        {
-          "data": "2026-06-27",
-          "preco": 189
-        },
-        {
-          "data": "2026-07-05",
-          "preco": 179
-        },
-        {
-          "data": "2026-07-13",
-          "preco": 184
-        },
-        {
-          "data": "2026-07-22",
-          "preco": 179
-        }
+      "especificacoes": [
+        "Jarra de 1,2 L",
+        "Filtro reutilizável",
+        "Sistema corta-pingos"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/cafeteira.html"
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": false
     },
     {
       "id": "air-fryer-compacta",
@@ -275,18 +99,18 @@
       "nota": 8.8,
       "perfil": "Compacta para 1–2 pessoas",
       "termos": "air fryer fritadeira compacta pequena casal cozinha",
-      "especificacoes": ["Capacidade de 3,5 L", "Controle manual", "Ocupa pouco espaço"],
-      "precoReferencia": 349,
-      "precoAtual": 289,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 329},
-        {"data": "2026-06-20", "preco": 319},
-        {"data": "2026-07-05", "preco": 299},
-        {"data": "2026-07-22", "preco": 289}
+      "especificacoes": [
+        "Capacidade de 3,5 L",
+        "Controle manual",
+        "Ocupa pouco espaço"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": false
     },
     {
       "id": "air-fryer-familia",
@@ -297,18 +121,18 @@
       "nota": 9.1,
       "perfil": "Família e porções maiores",
       "termos": "air fryer fritadeira grande família cesto largo cozinha",
-      "especificacoes": ["Capacidade de 5,5 L", "Cesto largo", "Programas automáticos"],
-      "precoReferencia": 599,
-      "precoAtual": 499,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 579},
-        {"data": "2026-06-20", "preco": 559},
-        {"data": "2026-07-05", "preco": 529},
-        {"data": "2026-07-22", "preco": 499}
+      "especificacoes": [
+        "Capacidade de 5,5 L",
+        "Cesto largo",
+        "Programas automáticos"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": false
     },
     {
       "id": "robo-aspirador-essencial",
@@ -319,18 +143,18 @@
       "nota": 8.5,
       "perfil": "Manutenção de apartamentos",
       "termos": "robo aspirador básico apartamento limpeza diária",
-      "especificacoes": ["Navegação aleatória", "Perfil baixo", "Retorno à base"],
-      "precoReferencia": 849,
-      "precoAtual": 699,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 829},
-        {"data": "2026-06-20", "preco": 779},
-        {"data": "2026-07-05", "preco": 729},
-        {"data": "2026-07-22", "preco": 699}
+      "especificacoes": [
+        "Navegação aleatória",
+        "Perfil baixo",
+        "Retorno à base"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/robo-aspirador.html"
+      "slugGuia": "guias/robo-aspirador.html",
+      "publicado": false
     },
     {
       "id": "robo-aspirador-lidar",
@@ -341,18 +165,18 @@
       "nota": 9.3,
       "perfil": "Casas maiores e rotinas programadas",
       "termos": "robo aspirador lidar mapeamento aplicativo casa grande",
-      "especificacoes": ["Mapeamento a laser", "Zonas de limpeza", "Maior potência de sucção"],
-      "precoReferencia": 1899,
-      "precoAtual": 1599,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 1849},
-        {"data": "2026-06-20", "preco": 1799},
-        {"data": "2026-07-05", "preco": 1699},
-        {"data": "2026-07-22", "preco": 1599}
+      "especificacoes": [
+        "Mapeamento a laser",
+        "Zonas de limpeza",
+        "Maior potência de sucção"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/robo-aspirador.html"
+      "slugGuia": "guias/robo-aspirador.html",
+      "publicado": false
     },
     {
       "id": "fone-bluetooth-compacto",
@@ -363,18 +187,18 @@
       "nota": 8.4,
       "perfil": "Chamadas e deslocamentos curtos",
       "termos": "fone bluetooth compacto barato chamada microfone",
-      "especificacoes": ["Até 18 h com estojo", "Controles por toque", "Estojo compacto"],
-      "precoReferencia": 199,
-      "precoAtual": 149,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 189},
-        {"data": "2026-06-20", "preco": 179},
-        {"data": "2026-07-05", "preco": 159},
-        {"data": "2026-07-22", "preco": 149}
+      "especificacoes": [
+        "Até 18 h com estojo",
+        "Controles por toque",
+        "Estojo compacto"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/fone-bluetooth.html"
+      "slugGuia": "guias/fone-bluetooth.html",
+      "publicado": false
     },
     {
       "id": "fone-bluetooth-anc",
@@ -385,18 +209,18 @@
       "nota": 9.2,
       "perfil": "Viagens e ambientes ruidosos",
       "termos": "fone bluetooth anc cancelamento ruído viagem bateria",
-      "especificacoes": ["Cancelamento ativo", "Modo transparência", "Até 36 h com estojo"],
-      "precoReferencia": 599,
-      "precoAtual": 499,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 579},
-        {"data": "2026-06-20", "preco": 549},
-        {"data": "2026-07-05", "preco": 529},
-        {"data": "2026-07-22", "preco": 499}
+      "especificacoes": [
+        "Cancelamento ativo",
+        "Modo transparência",
+        "Até 36 h com estojo"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/fone-bluetooth.html"
+      "slugGuia": "guias/fone-bluetooth.html",
+      "publicado": false
     },
     {
       "id": "cafeteira-compacta",
@@ -407,18 +231,18 @@
       "nota": 8.4,
       "perfil": "Uma ou duas pessoas",
       "termos": "cafeteira elétrica compacta pequena café cozinha",
-      "especificacoes": ["Jarra de 600 ml", "Filtro permanente", "Base compacta"],
-      "precoReferencia": 169,
-      "precoAtual": 139,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 159},
-        {"data": "2026-06-20", "preco": 149},
-        {"data": "2026-07-05", "preco": 145},
-        {"data": "2026-07-22", "preco": 139}
+      "especificacoes": [
+        "Jarra de 600 ml",
+        "Filtro permanente",
+        "Base compacta"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/cafeteira.html"
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": false
     },
     {
       "id": "cafeteira-programavel",
@@ -429,18 +253,18 @@
       "nota": 9.1,
       "perfil": "Famílias e rotina programada",
       "termos": "cafeteira programável timer família jarra grande café",
-      "especificacoes": ["Jarra de 1,5 L", "Timer programável", "Ajuste de intensidade"],
-      "precoReferencia": 369,
-      "precoAtual": 299,
-      "urlOferta": "",
-      "historico": [
-        {"data": "2026-06-01", "preco": 349},
-        {"data": "2026-06-20", "preco": 329},
-        {"data": "2026-07-05", "preco": 319},
-        {"data": "2026-07-22", "preco": 299}
+      "especificacoes": [
+        "Jarra de 1,5 L",
+        "Timer programável",
+        "Ajuste de intensidade"
       ],
+      "precoReferencia": 0,
+      "precoAtual": 0,
+      "urlOferta": "",
+      "historico": [],
       "loja": "",
-      "slugGuia": "guias/cafeteira.html"
+      "slugGuia": "guias/cafeteira.html",
+      "publicado": false
     },
     {
       "id": "air-fryer-oster-ofrt520",
@@ -451,21 +275,49 @@
       "nota": 9.3,
       "perfil": "Melhor equilíbrio geral",
       "termos": "air fryer oster ofrt520 4,6 litros compacta inox",
-      "especificacoes": ["Capacidade de 4,6 L", "Potência de 1.500 W", "Timer de 60 minutos", "Temperatura de 80 a 200 °C"],
-      "pros": ["boa capacidade em corpo compacto", "grelha Easy Clean"],
-      "contras": ["sem painel digital", "sem programas automáticos"],
+      "especificacoes": [
+        "Capacidade de 4,6 L",
+        "Potência de 1.500 W",
+        "Timer de 60 minutos",
+        "Temperatura de 80 a 200 °C"
+      ],
+      "pros": [
+        "boa capacidade em corpo compacto",
+        "grelha Easy Clean"
+      ],
+      "contras": [
+        "sem painel digital",
+        "sem programas automáticos"
+      ],
       "precoReferencia": 0,
       "precoAtual": 0,
       "urlOferta": "https://meli.la/2evuvNn",
       "ofertas": [
-        {"loja": "Amazon", "url": "", "preco": 0},
-        {"loja": "Mercado Livre", "url": "https://meli.la/2evuvNn", "preco": 0},
-        {"loja": "Shopee", "url": "", "preco": 0},
-        {"loja": "Casas Bahia", "url": "", "preco": 0}
+        {
+          "loja": "Amazon",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Mercado Livre",
+          "url": "https://meli.la/2evuvNn",
+          "preco": 0
+        },
+        {
+          "loja": "Shopee",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Casas Bahia",
+          "url": "",
+          "preco": 0
+        }
       ],
       "historico": [],
       "loja": "Mercado Livre",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": true
     },
     {
       "id": "air-fryer-mondial-afn40",
@@ -476,21 +328,49 @@
       "nota": 9.1,
       "perfil": "Melhor opção compacta",
       "termos": "air fryer mondial afn 40 compacta 4 litros",
-      "especificacoes": ["Capacidade de 4 L", "Potência de 1.500 W", "Timer de 60 minutos", "Cesto quadrado"],
-      "pros": ["tamanho compacto", "controles simples"],
-      "contras": ["menor capacidade", "sem receitas automáticas"],
+      "especificacoes": [
+        "Capacidade de 4 L",
+        "Potência de 1.500 W",
+        "Timer de 60 minutos",
+        "Cesto quadrado"
+      ],
+      "pros": [
+        "tamanho compacto",
+        "controles simples"
+      ],
+      "contras": [
+        "menor capacidade",
+        "sem receitas automáticas"
+      ],
       "precoReferencia": 0,
       "precoAtual": 0,
       "urlOferta": "https://meli.la/1ZeeMhw",
       "ofertas": [
-        {"loja": "Amazon", "url": "", "preco": 0},
-        {"loja": "Mercado Livre", "url": "https://meli.la/1ZeeMhw", "preco": 0},
-        {"loja": "Shopee", "url": "", "preco": 0},
-        {"loja": "Casas Bahia", "url": "", "preco": 0}
+        {
+          "loja": "Amazon",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Mercado Livre",
+          "url": "https://meli.la/1ZeeMhw",
+          "preco": 0
+        },
+        {
+          "loja": "Shopee",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Casas Bahia",
+          "url": "",
+          "preco": 0
+        }
       ],
       "historico": [],
       "loja": "Mercado Livre",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": true
     },
     {
       "id": "air-fryer-mondial-oven-12l",
@@ -498,24 +378,52 @@
       "categoria": "Casa e Cozinha",
       "imagem": "/imagens/cozinha/air-fryer/41Zi-3T4VAL._SL500_.jpg",
       "alt": "Air Fryer Oven Mondial de 12 litros",
-      "nota": 9.0,
+      "nota": 9,
       "perfil": "Melhor forno multifuncional",
       "termos": "air fryer mondial oven forno 12 litros",
-      "especificacoes": ["Capacidade de 12 L", "Potência a partir de 2.000 W", "Timer de 90 minutos", "Air fryer e forno"],
-      "pros": ["visor amplo", "prateleiras e assadeiras"],
-      "contras": ["ocupa mais bancada", "mais peças para limpar"],
+      "especificacoes": [
+        "Capacidade de 12 L",
+        "Potência a partir de 2.000 W",
+        "Timer de 90 minutos",
+        "Air fryer e forno"
+      ],
+      "pros": [
+        "visor amplo",
+        "prateleiras e assadeiras"
+      ],
+      "contras": [
+        "ocupa mais bancada",
+        "mais peças para limpar"
+      ],
       "precoReferencia": 0,
       "precoAtual": 0,
       "urlOferta": "",
       "ofertas": [
-        {"loja": "Amazon", "url": "", "preco": 0},
-        {"loja": "Mercado Livre", "url": "", "preco": 0},
-        {"loja": "Shopee", "url": "", "preco": 0},
-        {"loja": "Casas Bahia", "url": "", "preco": 0}
+        {
+          "loja": "Amazon",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Mercado Livre",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Shopee",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Casas Bahia",
+          "url": "",
+          "preco": 0
+        }
       ],
       "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": true
     },
     {
       "id": "air-fryer-mondial-afn80",
@@ -526,21 +434,49 @@
       "nota": 8.9,
       "perfil": "Melhor para família grande",
       "termos": "air fryer mondial mega family afn 80 8 litros",
-      "especificacoes": ["Capacidade de 8 L", "Potência de 1.900 W", "Timer de 60 minutos", "Cesto quadrado"],
-      "pros": ["grande área útil", "boa para porções familiares"],
-      "contras": ["corpo grande", "versão 127 V usa tomada de 20 A"],
+      "especificacoes": [
+        "Capacidade de 8 L",
+        "Potência de 1.900 W",
+        "Timer de 60 minutos",
+        "Cesto quadrado"
+      ],
+      "pros": [
+        "grande área útil",
+        "boa para porções familiares"
+      ],
+      "contras": [
+        "corpo grande",
+        "versão 127 V usa tomada de 20 A"
+      ],
       "precoReferencia": 0,
       "precoAtual": 0,
       "urlOferta": "",
       "ofertas": [
-        {"loja": "Amazon", "url": "", "preco": 0},
-        {"loja": "Mercado Livre", "url": "", "preco": 0},
-        {"loja": "Shopee", "url": "", "preco": 0},
-        {"loja": "Casas Bahia", "url": "", "preco": 0}
+        {
+          "loja": "Amazon",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Mercado Livre",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Shopee",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Casas Bahia",
+          "url": "",
+          "preco": 0
+        }
       ],
       "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": true
     },
     {
       "id": "air-fryer-philips-ri9270",
@@ -551,21 +487,49 @@
       "nota": 8.8,
       "perfil": "Melhor experiência digital",
       "termos": "air fryer philips walita ri9270 xl digital",
-      "especificacoes": ["Capacidade de 6,2 L", "Painel digital", "Tecnologia Rapid Air", "Temperatura de 80 a 200 °C"],
-      "pros": ["painel touch", "capacidade XL"],
-      "contras": ["faixa de preço superior", "interface menos direta que seletores"],
+      "especificacoes": [
+        "Capacidade de 6,2 L",
+        "Painel digital",
+        "Tecnologia Rapid Air",
+        "Temperatura de 80 a 200 °C"
+      ],
+      "pros": [
+        "painel touch",
+        "capacidade XL"
+      ],
+      "contras": [
+        "faixa de preço superior",
+        "interface menos direta que seletores"
+      ],
       "precoReferencia": 0,
       "precoAtual": 0,
       "urlOferta": "",
       "ofertas": [
-        {"loja": "Amazon", "url": "", "preco": 0},
-        {"loja": "Mercado Livre", "url": "", "preco": 0},
-        {"loja": "Shopee", "url": "", "preco": 0},
-        {"loja": "Casas Bahia", "url": "", "preco": 0}
+        {
+          "loja": "Amazon",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Mercado Livre",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Shopee",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Casas Bahia",
+          "url": "",
+          "preco": 0
+        }
       ],
       "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": true
     },
     {
       "id": "air-fryer-elgin-oven",
@@ -576,22 +540,50 @@
       "nota": 8.7,
       "perfil": "Alternativa oven completa",
       "termos": "air fryer elgin oven fry 12 litros digital",
-      "especificacoes": ["Capacidade de 12 L", "Potência de 1.800 W", "10 programas", "Assa, frita, desidrata e reaquece"],
-      "pros": ["porta removível", "acompanha quatro acessórios"],
-      "contras": ["exige mais espaço", "limpeza interna mais trabalhosa"],
+      "especificacoes": [
+        "Capacidade de 12 L",
+        "Potência de 1.800 W",
+        "10 programas",
+        "Assa, frita, desidrata e reaquece"
+      ],
+      "pros": [
+        "porta removível",
+        "acompanha quatro acessórios"
+      ],
+      "contras": [
+        "exige mais espaço",
+        "limpeza interna mais trabalhosa"
+      ],
       "precoReferencia": 0,
       "precoAtual": 0,
       "urlOferta": "",
       "ofertas": [
-        {"loja": "Amazon", "url": "", "preco": 0},
-        {"loja": "Mercado Livre", "url": "", "preco": 0},
-        {"loja": "Shopee", "url": "", "preco": 0},
-        {"loja": "Casas Bahia", "url": "", "preco": 0}
+        {
+          "loja": "Amazon",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Mercado Livre",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Shopee",
+          "url": "",
+          "preco": 0
+        },
+        {
+          "loja": "Casas Bahia",
+          "url": "",
+          "preco": 0
+        }
       ],
       "historico": [],
       "loja": "",
-      "slugGuia": "guias/air-fryer.html"
+      "slugGuia": "guias/air-fryer.html",
+      "publicado": true
     }
   ],
-  "demonstrativo": true
+  "demonstrativo": false
 }

@@ -1,5 +1,37 @@
 (() => {
   "use strict";
+  const CHAVE_GUIAS = "ofertas-que-valem:guias-salvos";
+  const botaoSalvar = document.querySelector("[data-salvar-guia]");
+  const guiaId = document.body.dataset.guiaId || document.body.dataset.produto;
+  let guiasSalvos = new Set();
+
+  try {
+    const salvos = JSON.parse(localStorage.getItem(CHAVE_GUIAS) || "[]");
+    guiasSalvos = new Set(Array.isArray(salvos) ? salvos : []);
+  } catch {
+    guiasSalvos = new Set();
+  }
+
+  function atualizarBotaoSalvar() {
+    if (!botaoSalvar || !guiaId) return;
+    const salvo = guiasSalvos.has(guiaId);
+    botaoSalvar.setAttribute("aria-pressed", String(salvo));
+    botaoSalvar.textContent = salvo ? "Guia salvo ✓" : "Salvar este guia";
+  }
+
+  botaoSalvar?.addEventListener("click", () => {
+    if (!guiaId) return;
+    if (guiasSalvos.has(guiaId)) guiasSalvos.delete(guiaId);
+    else guiasSalvos.add(guiaId);
+    try {
+      localStorage.setItem(CHAVE_GUIAS, JSON.stringify([...guiasSalvos]));
+    } catch {
+      return;
+    }
+    atualizarBotaoSalvar();
+  });
+  atualizarBotaoSalvar();
+
   const produtoId = document.body.dataset.produto;
   const botao = document.querySelector("[data-guia-oferta]");
   const status = document.querySelector("[data-status-guia]");
@@ -20,7 +52,7 @@
     window.dispatchEvent(new CustomEvent("ofertas-que-valem:clique-oferta", { detail: detalhe }));
   }
 
-  fetch("/produtos.json", { cache: "no-store" })
+  fetch("/assets/data/produtos.json", { cache: "no-store" })
     .then((resposta) => {
       if (!resposta.ok) throw new Error("Catálogo indisponível");
       return resposta.json();

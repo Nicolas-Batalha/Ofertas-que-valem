@@ -14,7 +14,7 @@
   <meta property="og:title" content="Sobre o projeto | Ofertas que Valem">
   <meta property="og:description" content="Conheça a proposta e a fase atual do Ofertas que Valem.">
   <meta property="og:url" content="https://ofertas-que-valem.vercel.app/sobre.html">
-  <meta property="og:image" content="https://ofertas-que-valem.vercel.app/imagens/og-ofertas-que-valem.png">
+  <meta property="og:image" content="https://ofertas-que-valem.vercel.app/imagens/social/og-ofertas-que-valem.png">
   <meta property="og:image:width" content="1693">
   <meta property="og:image:height" content="935">
   <meta property="og:image:alt" content="Ofertas que Valem — compare antes e escolha com clareza">
@@ -23,9 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/estilos.css">
-  <link rel="stylesheet" href="/paginas.css">
-  <script src="/navegacao.js" defer></script>
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/paginas.css">
+  <script src="/assets/js/navegacao.js" defer></script>
+  <script src="/assets/js/busca-global.js" defer></script>
   
 </head><body class="pagina-interna">
 <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
@@ -38,11 +39,11 @@
     <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
     <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
       <a href="/categorias.html">Categorias</a>
-      <a href="/#rankings">Comparar</a>
-      <a href="/#ofertas">Produtos</a>
+      <a href="/comparar.html">Comparar</a>
+      <a href="/busca.html">Produtos</a>
       <a href="/guias.html">Guias</a>
     </nav>
-    <form class="busca-cabecalho" role="search" action="/" method="get">
+    <form class="busca-cabecalho" role="search" action="/busca.html" method="get">
       <label class="somente-leitor" for="busca-interna">Buscar produto</label>
       <input id="busca-interna" name="busca" type="search" placeholder="O que você quer comparar?">
       <button type="submit" aria-label="Pesquisar"><span class="icone-lupa" aria-hidden="true"></span></button>

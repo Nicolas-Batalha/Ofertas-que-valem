@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare até três produtos lado a lado e veja diferenças de perfil, nota, preço demonstrativo e recursos.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#00293b">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://ofertas-que-valem.vercel.app/comparar.html">
+  <title>Comparar produtos lado a lado | Ofertas que Valem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/paginas.css">
+  <script src="/assets/js/navegacao.js" defer></script>
+  <script src="/assets/js/busca-global.js" defer></script>
+  <script src="/assets/js/comparar.js" defer></script>
+</head>
+<body class="pagina-interna pagina-comparar">
+<a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
+<header class="cabecalho">
+  <div class="limite cabecalho-conteudo">
+    <a class="marca" href="/" aria-label="Ofertas que Valem — início"><span class="marca-simbolo" aria-hidden="true"><span>✓</span></span><span class="marca-texto">Ofertas <small>que Valem</small></span></a>
+    <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+    <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal"><a href="/categorias.html">Categorias</a><a href="/comparar.html" aria-current="page">Comparar</a><a href="/busca.html">Produtos</a><a href="/guias.html">Guias</a></nav>
+    <form class="busca-cabecalho" role="search" action="/busca.html" method="get"><label class="somente-leitor" for="busca-interna">Buscar produto</label><input id="busca-interna" name="busca" type="search" placeholder="O que você quer comparar?"><button type="submit" aria-label="Pesquisar"><span class="icone-lupa" aria-hidden="true"></span></button></form>
+  </div>
+</header>
+<div class="aviso-pre-lancamento" role="note"><strong>Comparação editorial.</strong><span>Preços e recursos são demonstrativos até a verificação do catálogo.</span></div>
+
+<main class="pagina-conteudo comparar-conteudo" id="conteudo-principal">
+  <nav class="breadcrumb" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><span aria-current="page">Comparar</span></nav>
+  <header class="cabecalho-comparacao-pagina">
+    <span class="rotulo-pagina">Comparação lado a lado</span>
+    <h1>Veja as diferenças sem perder tempo</h1>
+    <p id="resumo-comparacao-pagina" role="status" aria-live="polite">Carregando produtos…</p>
+    <div class="acoes-comparacao-pagina"><a class="botao-pagina" href="/busca.html">Escolher produtos</a><button class="botao-contorno" id="compartilhar-comparacao-pagina" type="button">Copiar comparação</button></div>
+  </header>
+  <section class="grade-comparacao-pagina" id="conteudo-comparador-pagina" aria-label="Produtos comparados"></section>
+  <section class="comparacao-vazia" id="comparacao-vazia" hidden><h2>Escolha dois ou três produtos</h2><p>Use a busca para selecionar os itens que deseja analisar lado a lado.</p><a class="botao-pagina" href="/busca.html">Ir para a busca</a></section>
+</main>
+
+<footer class="rodape"><div class="limite rodape-conteudo"><div><p><strong>Ofertas que Valem</strong> — Compare antes de escolher.</p><p>Catálogo demonstrativo; nenhuma oferta de loja está ativa.</p></div><nav class="rodape-links" aria-label="Informações do site"><a href="/sobre.html">Sobre</a><a href="/metodologia.html">Metodologia</a><a href="/politica-editorial.html">Política editorial</a><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a></nav></div></footer>
+</body>
+</html>

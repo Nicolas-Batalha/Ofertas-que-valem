@@ -208,7 +208,7 @@
 
   async function carregarCatalogoPrecos() {
     try {
-      const resposta = await fetch("produtos.json", { cache: "no-store" });
+      const resposta = await fetch("/assets/data/produtos.json", { cache: "no-store" });
       if (!resposta.ok) throw new Error(`Falha ao carregar preços: ${resposta.status}`);
       const catalogo = await resposta.json();
       if (!Array.isArray(catalogo.produtos)) throw new Error("Catálogo de preços inválido");
@@ -325,7 +325,13 @@
 
   formularioBusca?.addEventListener("submit", (evento) => {
     evento.preventDefault();
-    executarBusca();
+    const termo = campoBusca?.value.trim() || "";
+    if (!termo) {
+      mostrarAviso("Digite o nome de um produto ou categoria.");
+      campoBusca?.focus();
+      return;
+    }
+    window.location.href = `/busca.html?busca=${encodeURIComponent(termo)}`;
   });
 
   campoBusca?.addEventListener("input", () => {
@@ -415,6 +421,7 @@
   const miniaturasComparador = selecionar("#comparador-miniaturas");
   const textoComparador = selecionar("#texto-comparador");
   const botaoComparar = selecionar("#botao-comparar");
+  const botaoCompartilharComparacao = selecionar("#compartilhar-comparacao");
   const modalComparacao = selecionar("#modal-comparacao");
   const conteudoComparacao = selecionar("#conteudo-comparacao");
   const botaoFecharComparacao = selecionar(".fechar-comparacao");
@@ -425,6 +432,7 @@
 
   function atualizarComparador() {
     const selecionadas = caixasSelecionadas();
+    const ids = selecionadas.map((caixa) => caixa.dataset.produto).filter(Boolean);
     if (comparador) comparador.hidden = selecionadas.length === 0;
     if (miniaturasComparador) miniaturasComparador.replaceChildren();
 
@@ -441,6 +449,8 @@
       const imagem = document.createElement("img");
       imagem.src = caixa.dataset.imagem;
       imagem.alt = `${caixa.dataset.nome} selecionado para comparação`;
+      imagem.width = 640;
+      imagem.height = 640;
 
       miniatura.append(remover, imagem);
       miniaturasComparador?.append(miniatura);
@@ -450,6 +460,18 @@
       textoComparador.textContent = `${selecionadas.length} ${selecionadas.length === 1 ? "produto selecionado" : "produtos selecionados"}`;
     }
     botaoComparar?.setAttribute("aria-disabled", String(selecionadas.length < 2));
+    botaoCompartilharComparacao?.toggleAttribute("disabled", selecionadas.length < 2);
+
+    if (botaoComparar) {
+      botaoComparar.href = selecionadas.length >= 2
+        ? `/comparar.html?produtos=${encodeURIComponent(ids.join(","))}`
+        : "/comparar.html";
+    }
+
+    const urlAtual = new URL(window.location.href);
+    if (ids.length) urlAtual.searchParams.set("comparar", ids.join(","));
+    else urlAtual.searchParams.delete("comparar");
+    window.history.replaceState({}, "", `${urlAtual.pathname}${urlAtual.search}${urlAtual.hash}`);
   }
 
   caixasComparacao.forEach((caixa) => {
@@ -498,6 +520,8 @@
       const produto = catalogoPorId.get(caixa.dataset.produto);
       const item = document.createElement("article");
       item.className = "item-comparacao";
+      item.dataset.nota = String(produto?.nota || 0);
+      item.dataset.preco = String(produto?.precoAtual || 0);
       const imagem = selecionar(".imagem-ranking-produto", cartao)?.cloneNode(true);
       const titulo = document.createElement("h3");
       titulo.textContent = selecionar("h3", cartao)?.textContent.trim() || caixa.dataset.nome;
@@ -530,7 +554,7 @@
       item.append(
         titulo,
         adicionarLinhaComparacao(cartao, "Nota editorial", ".nota-produto", "valor-nota"),
-        adicionarLinhaComparacao(cartao, "Preço de exemplo", ".preco-inicial strong"),
+        adicionarLinhaComparacao(cartao, "Preço de exemplo", ".preco-inicial strong", "valor-preco"),
         adicionarLinhaComparacao(cartao, "Ponto forte", ".positivo"),
         adicionarLinhaComparacao(cartao, "Atenção", ".negativo"),
         acoes
@@ -538,16 +562,50 @@
       conteudoComparacao?.append(item);
     });
 
+    const itens = selecionarTodos(".item-comparacao", conteudoComparacao);
+    const maiorNota = Math.max(...itens.map((item) => Number(item.dataset.nota) || 0));
+    const precos = itens.map((item) => Number(item.dataset.preco) || 0).filter((valor) => valor > 0);
+    const menorPreco = precos.length ? Math.min(...precos) : 0;
+    itens.forEach((item) => {
+      selecionar(".valor-nota", item)?.classList.toggle("melhor-comparacao", Number(item.dataset.nota) === maiorNota);
+      selecionar(".valor-preco", item)?.classList.toggle(
+        "melhor-comparacao",
+        menorPreco > 0 && Number(item.dataset.preco) === menorPreco
+      );
+    });
+
     if (typeof modalComparacao?.showModal === "function") modalComparacao.showModal();
     else modalComparacao?.setAttribute("open", "");
   }
 
   botaoComparar?.addEventListener("click", abrirComparacao);
+  botaoCompartilharComparacao?.addEventListener("click", async () => {
+    const ids = caixasSelecionadas().map((caixa) => caixa.dataset.produto).filter(Boolean);
+    if (ids.length < 2) {
+      mostrarAviso("Selecione pelo menos 2 produtos para compartilhar.");
+      return;
+    }
+    const destino = new URL("/comparar.html", window.location.origin);
+    destino.searchParams.set("produtos", ids.join(","));
+    try {
+      await navigator.clipboard.writeText(destino.href);
+      mostrarAviso("Link da comparação copiado.");
+    } catch {
+      window.prompt("Copie o link da comparação:", destino.href);
+    }
+  });
   botaoFecharComparacao?.addEventListener("click", () => modalComparacao?.close());
   modalComparacao?.addEventListener("click", (evento) => {
     if (evento.target === modalComparacao) modalComparacao.close();
   });
 
+  const compararInicial = new URLSearchParams(window.location.search).get("comparar");
+  if (compararInicial) {
+    const idsIniciais = compararInicial.split(",").slice(0, 3);
+    caixasComparacao.forEach((caixa) => {
+      caixa.checked = idsIniciais.includes(caixa.dataset.produto);
+    });
+  }
   atualizarComparador();
 
   selecionar("#ver-todas-ofertas")?.addEventListener("click", () => {

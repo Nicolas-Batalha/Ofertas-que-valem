@@ -4,7 +4,7 @@ Site editorial de guias de compra e comparação, preparado para receber links d
 
 ## Como ativar uma oferta
 
-Edite o produto correspondente em `produtos.json`:
+Edite o produto correspondente em `assets/data/produtos.json`:
 
 ```json
 {
@@ -21,7 +21,7 @@ Quando `urlOferta` estiver preenchido:
 - o link abre em nova aba com `rel="sponsored nofollow noopener noreferrer"`;
 - o evento `clique_oferta` é enviado para `dataLayer` e também dispara o evento do navegador `ofertas-que-valem:clique-oferta`.
 
-Depois que preços e históricos forem reais, altere no topo de `produtos.json`:
+Depois que preços e históricos forem reais, altere no topo de `assets/data/produtos.json`:
 
 ```json
 {
@@ -35,10 +35,15 @@ Não desative o modo demonstrativo enquanto os valores forem exemplos.
 
 ## Estrutura
 
-- `index.html`: homepage, busca e comparador.
-- `guias.html`: lista de guias.
-- `guias/`: guias editoriais de cada categoria de produto.
-- `categorias.html`: central de categorias.
-- `metodologia.html` e `politica-editorial.html`: critérios e transparência.
-- `produtos.json`: catálogo, preços e links de lojas.
-- `sitemap.xml` e `robots.txt`: indexação.
+- `index.html` e demais arquivos `.html` da raiz: páginas públicas com URLs estáveis.
+- `guias/`: páginas editoriais de cada categoria de produto.
+- `assets/css/`: estilos globais e das páginas internas.
+- `assets/js/`: navegação, busca, comparação e comportamento dos guias.
+- `assets/data/produtos.json`: catálogo, preços e futuros links de lojas.
+- `imagens/otimizadas/`: imagens usadas pelo site.
+- `imagens/originais/`: arquivos-fonte preservados para futuras edições.
+- `imagens/social/`: imagem de compartilhamento do site.
+- `docs/referencias/`: referências visuais de desenvolvimento.
+- `sitemap.xml`, `robots.txt`, `site.webmanifest` e `vercel.json`: SEO e configuração de publicação.
+
+Os arquivos temporários de prévia local são ignorados pelo Git para manter a raiz limpa.

@@ -1,0 +1,9 @@
+# Arquivos temporários de prévia local
+.codex-preview-server.cjs
+.responsive-server.cjs
+__responsive-preview.html
+
+# Arquivos do sistema e editores
+.DS_Store
+Thumbs.db
+*.log

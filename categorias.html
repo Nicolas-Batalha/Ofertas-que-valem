@@ -14,7 +14,7 @@
   <meta property="og:title" content="Categorias de produtos | Ofertas que Valem">
   <meta property="og:description" content="Explore guias de compra por categoria e encontre os critérios mais importantes para cada tipo de produto.">
   <meta property="og:url" content="https://ofertas-que-valem.vercel.app/categorias.html">
-  <meta property="og:image" content="https://ofertas-que-valem.vercel.app/imagens/og-ofertas-que-valem.png">
+  <meta property="og:image" content="https://ofertas-que-valem.vercel.app/imagens/social/og-ofertas-que-valem.png">
   <meta property="og:image:width" content="1693">
   <meta property="og:image:height" content="935">
   <meta property="og:image:alt" content="Ofertas que Valem — compare antes e escolha com clareza">
@@ -23,10 +23,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/estilos.css">
-  <link rel="stylesheet" href="/paginas.css">
-  <script src="/navegacao.js" defer></script>
-  
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/paginas.css">
+  <script src="/assets/js/navegacao.js" defer></script>
+  <script src="/assets/js/busca-global.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Categorias de produtos",
+    "url": "https://ofertas-que-valem.vercel.app/categorias.html",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Casa e Cozinha", "url": "https://ofertas-que-valem.vercel.app/categorias.html#casa-e-cozinha"},
+        {"@type": "ListItem", "position": 2, "name": "Eletrônicos", "url": "https://ofertas-que-valem.vercel.app/categorias.html#eletronicos"},
+        {"@type": "ListItem", "position": 3, "name": "Beleza", "url": "https://ofertas-que-valem.vercel.app/categorias.html#beleza"},
+        {"@type": "ListItem", "position": 4, "name": "Ferramentas", "url": "https://ofertas-que-valem.vercel.app/categorias.html#ferramentas"},
+        {"@type": "ListItem", "position": 5, "name": "Esportes", "url": "https://ofertas-que-valem.vercel.app/categorias.html#esportes"},
+        {"@type": "ListItem", "position": 6, "name": "Infantil", "url": "https://ofertas-que-valem.vercel.app/categorias.html#infantil"},
+        {"@type": "ListItem", "position": 7, "name": "Automotivo", "url": "https://ofertas-que-valem.vercel.app/categorias.html#automotivo"}
+      ]
+    }
+  }
+  </script>
 </head><body class="pagina-interna">
 <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
 <header class="cabecalho">
@@ -38,11 +58,11 @@
     <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
     <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal">
       <a href="/categorias.html" aria-current="page">Categorias</a>
-      <a href="/#rankings">Comparar</a>
-      <a href="/#ofertas">Produtos</a>
+      <a href="/comparar.html">Comparar</a>
+      <a href="/busca.html">Produtos</a>
       <a href="/guias.html">Guias</a>
     </nav>
-    <form class="busca-cabecalho" role="search" action="/" method="get">
+    <form class="busca-cabecalho" role="search" action="/busca.html" method="get">
       <label class="somente-leitor" for="busca-interna">Buscar produto</label>
       <input id="busca-interna" name="busca" type="search" placeholder="O que você quer comparar?">
       <button type="submit" aria-label="Pesquisar"><span class="icone-lupa" aria-hidden="true"></span></button>
@@ -53,7 +73,7 @@
 <main class="pagina-conteudo" id="conteudo-principal">
   <nav class="breadcrumb" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><span aria-current="page">Categorias</span></nav>
   <header class="cabecalho-listagem"><span class="rotulo-pagina">Explore por assunto</span><h1>Categorias</h1><p>Começamos pelas decisões mais comuns e ampliaremos o catálogo somente quando cada guia estiver completo.</p></header>
-  <div class="lista-categorias"><section class="categoria-bloco" id="casa-e-cozinha"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/casa-cozinha.webp" alt="" loading="lazy"><div><h2>Casa e Cozinha</h2><p>Eletroportáteis para facilitar preparo, limpeza e rotina doméstica.</p></div></div><div class="links-categoria"><a href="/guias/air-fryer.html">Air Fryers: ver categoria completa</a><a href="/guias/cafeteira.html">Cafeteira Elétrica: escolha o sistema certo</a></div></section><section class="categoria-bloco" id="eletronicos"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/eletronicos.webp" alt="" loading="lazy"><div><h2>Eletrônicos</h2><p>Áudio, dispositivos conectados e tecnologia para o dia a dia.</p></div></div><div class="links-categoria"><a href="/guias/robo-aspirador.html">Robô Aspirador: o que comparar</a><a href="/guias/fone-bluetooth.html">Fone Bluetooth: conforto, som e bateria</a></div></section><section class="categoria-bloco" id="beleza"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/beleza.webp" alt="" loading="lazy"><div><h2>Beleza</h2><p>Cuidados pessoais com atenção a segurança, ergonomia e manutenção.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="ferramentas"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/ferramentas.webp" alt="" loading="lazy"><div><h2>Ferramentas</h2><p>Ferramentas para pequenos reparos e projetos domésticos.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="esportes"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/esportes.webp" alt="" loading="lazy"><div><h2>Esportes</h2><p>Equipamentos para atividade física, lazer e treino.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="infantil"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/infantil.webp" alt="" loading="lazy"><div><h2>Infantil</h2><p>Produtos infantis com foco em idade indicada, segurança e durabilidade.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="automotivo"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/automotivo.webp" alt="" loading="lazy"><div><h2>Automotivo</h2><p>Acessórios e cuidados para uso, organização e manutenção do veículo.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section></div>
+  <div class="lista-categorias"><section class="categoria-bloco" id="casa-e-cozinha"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/casa-cozinha.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Casa e Cozinha</h2><p>Eletroportáteis para facilitar preparo, limpeza e rotina doméstica.</p></div></div><div class="links-categoria"><a href="/guias/air-fryer.html">Air Fryers: ver categoria completa</a><a href="/guias/cafeteira.html">Cafeteira Elétrica: escolha o sistema certo</a></div></section><section class="categoria-bloco" id="eletronicos"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/eletronicos.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Eletrônicos</h2><p>Áudio, dispositivos conectados e tecnologia para o dia a dia.</p></div></div><div class="links-categoria"><a href="/guias/robo-aspirador.html">Robô Aspirador: o que comparar</a><a href="/guias/fone-bluetooth.html">Fone Bluetooth: conforto, som e bateria</a></div></section><section class="categoria-bloco" id="beleza"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/beleza.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Beleza</h2><p>Cuidados pessoais com atenção a segurança, ergonomia e manutenção.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="ferramentas"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/ferramentas.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Ferramentas</h2><p>Ferramentas para pequenos reparos e projetos domésticos.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="esportes"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/esportes.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Esportes</h2><p>Equipamentos para atividade física, lazer e treino.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="infantil"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/infantil.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Infantil</h2><p>Produtos infantis com foco em idade indicada, segurança e durabilidade.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section><section class="categoria-bloco" id="automotivo"><div class="categoria-topo"><img src="/imagens/otimizadas/categorias/automotivo.webp" alt="" loading="lazy" width="260" height="260"><div><h2>Automotivo</h2><p>Acessórios e cuidados para uso, organização e manutenção do veículo.</p></div></div><div class="links-categoria"><span class="categoria-status">Novos guias em preparação</span></div></section></div>
 </main>
 <footer class="rodape">
   <div class="limite rodape-conteudo">

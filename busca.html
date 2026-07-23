@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Busque e filtre produtos, perfis e guias de compra no Ofertas que Valem.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#00293b">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="https://ofertas-que-valem.vercel.app/busca.html">
+  <title>Buscar produtos e guias | Ofertas que Valem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/paginas.css">
+  <script src="/assets/js/navegacao.js" defer></script>
+  <script src="/assets/js/busca-global.js" defer></script>
+  <script src="/assets/js/busca.js" defer></script>
+</head>
+<body class="pagina-interna pagina-busca">
+<a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
+<header class="cabecalho">
+  <div class="limite cabecalho-conteudo">
+    <a class="marca" href="/" aria-label="Ofertas que Valem — início"><span class="marca-simbolo" aria-hidden="true"><span>✓</span></span><span class="marca-texto">Ofertas <small>que Valem</small></span></a>
+    <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span></button>
+    <nav class="menu-principal" id="menu-principal" aria-label="Navegação principal"><a href="/categorias.html">Categorias</a><a href="/comparar.html">Comparar</a><a href="/busca.html" aria-current="page">Produtos</a><a href="/guias.html">Guias</a></nav>
+    <form class="busca-cabecalho" role="search" action="/busca.html" method="get">
+      <label class="somente-leitor" for="busca-interna">Buscar produto</label>
+      <input id="busca-interna" name="busca" type="search" placeholder="O que você quer comparar?">
+      <button type="submit" aria-label="Pesquisar"><span class="icone-lupa" aria-hidden="true"></span></button>
+    </form>
+  </div>
+</header>
+<div class="aviso-pre-lancamento" role="note"><strong>Catálogo demonstrativo.</strong><span>Use os filtros para explorar como a busca funcionará com produtos verificados.</span></div>
+
+<main class="pagina-conteudo busca-conteudo" id="conteudo-principal">
+  <nav class="breadcrumb" aria-label="Navegação estrutural"><a href="/">Início</a><span>›</span><span aria-current="page">Busca</span></nav>
+  <header class="cabecalho-busca">
+    <span class="rotulo-pagina">Busca inteligente</span>
+    <h1>Encontre o produto certo para a sua rotina</h1>
+    <p>Pesquise por nome, categoria ou necessidade e refine os resultados sem perder o contexto editorial.</p>
+    <label class="campo-busca-pagina" for="busca-pagina"><span class="icone-lupa" aria-hidden="true"></span><input id="busca-pagina" type="search" list="sugestoes-busca-pagina" placeholder="Ex.: air fryer para família"><button id="limpar-filtros" type="button">Limpar</button></label>
+    <datalist id="sugestoes-busca-pagina"></datalist>
+  </header>
+
+  <section class="painel-filtros-busca" aria-label="Filtros de produtos">
+    <label>Categoria<select id="filtro-categoria"><option value="">Todas</option></select></label>
+    <label>Faixa de preço<select id="filtro-preco"><option value="">Todas</option><option value="ate-300">Até R$ 300</option><option value="300-700">R$ 300 a R$ 700</option><option value="700-1200">R$ 700 a R$ 1.200</option><option value="1200-mais">Acima de R$ 1.200</option></select></label>
+    <label>Nota mínima<select id="filtro-nota"><option value="">Qualquer nota</option><option value="8.5">8,5 ou mais</option><option value="9">9,0 ou mais</option></select></label>
+    <label>Perfil<select id="filtro-perfil"><option value="">Todos</option></select></label>
+    <label>Ordenar<select id="ordenacao-busca"><option value="relevancia">Relevância</option><option value="maior-nota">Maior nota</option><option value="menor-preco">Menor preço</option><option value="nome">Nome</option></select></label>
+  </section>
+
+  <p class="resumo-resultados" id="resumo-resultados" role="status" aria-live="polite">Carregando catálogo…</p>
+  <section class="grade-resultados-produtos" id="resultados-produtos" aria-label="Resultados da busca"></section>
+  <section class="busca-vazia" id="busca-vazia" hidden><h2>Nenhum produto encontrado</h2><p>Tente remover algum filtro ou usar termos como “fritadeira”, “café”, “limpeza” ou “áudio”.</p></section>
+</main>
+
+<aside class="comparador-busca" id="comparador-busca" hidden aria-label="Produtos selecionados para comparação">
+  <strong id="texto-comparador-busca">0 produtos selecionados</strong>
+  <a id="ir-comparador" href="/comparar.html" aria-disabled="true">Comparar selecionados →</a>
+</aside>
+
+<footer class="rodape"><div class="limite rodape-conteudo"><div><p><strong>Ofertas que Valem</strong> — Compare antes de escolher.</p><p>Catálogo demonstrativo; nenhuma oferta de loja está ativa.</p></div><nav class="rodape-links" aria-label="Informações do site"><a href="/sobre.html">Sobre</a><a href="/metodologia.html">Metodologia</a><a href="/politica-editorial.html">Política editorial</a><a href="/privacidade.html">Privacidade</a><a href="/termos.html">Termos</a></nav></div></footer>
+</body>
+</html>

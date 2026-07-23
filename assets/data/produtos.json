@@ -1,0 +1,447 @@
+{
+  "atualizadoEm": "2026-07-22T13:17:00-03:00",
+  "fonte": "Catálogo local de demonstração",
+  "produtos": [
+    {
+      "id": "air-fryer",
+      "nome": "Air fryer 4,2 L",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/air-fryer.webp",
+      "alt": "Air fryer digital preta",
+      "nota": 9.4,
+      "perfil": "Equilíbrio para 2–4 pessoas",
+      "termos": "air fryer fritadeira elétrica cozinha cesto médio família",
+      "especificacoes": ["Capacidade de 4,2 L", "Painel digital", "Cesto removível"],
+      "precoReferencia": 459,
+      "precoAtual": 349,
+      "urlOferta": "",
+      "historico": [
+        {
+          "data": "2026-04-24",
+          "preco": 459
+        },
+        {
+          "data": "2026-05-02",
+          "preco": 449
+        },
+        {
+          "data": "2026-05-10",
+          "preco": 439
+        },
+        {
+          "data": "2026-05-18",
+          "preco": 429
+        },
+        {
+          "data": "2026-05-26",
+          "preco": 439
+        },
+        {
+          "data": "2026-06-03",
+          "preco": 409
+        },
+        {
+          "data": "2026-06-11",
+          "preco": 399
+        },
+        {
+          "data": "2026-06-19",
+          "preco": 389
+        },
+        {
+          "data": "2026-06-27",
+          "preco": 379
+        },
+        {
+          "data": "2026-07-05",
+          "preco": 369
+        },
+        {
+          "data": "2026-07-13",
+          "preco": 359
+        },
+        {
+          "data": "2026-07-22",
+          "preco": 349
+        }
+      ],
+      "loja": "",
+      "slugGuia": "guias/air-fryer.html"
+    },
+    {
+      "id": "robo-aspirador",
+      "nome": "Robô aspirador 2 em 1",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/robo-aspirador.webp",
+      "alt": "Robô aspirador preto 2 em 1",
+      "nota": 9.2,
+      "perfil": "Limpeza diária automatizada",
+      "termos": "robo aspirador limpeza casa pelos tapete aplicativo",
+      "especificacoes": ["Aspira e passa pano", "Retorno automático", "Controle por aplicativo"],
+      "precoReferencia": 1499,
+      "precoAtual": 1019,
+      "urlOferta": "",
+      "historico": [
+        {
+          "data": "2026-04-24",
+          "preco": 1499
+        },
+        {
+          "data": "2026-05-02",
+          "preco": 1449
+        },
+        {
+          "data": "2026-05-10",
+          "preco": 1399
+        },
+        {
+          "data": "2026-05-18",
+          "preco": 1349
+        },
+        {
+          "data": "2026-05-26",
+          "preco": 1299
+        },
+        {
+          "data": "2026-06-03",
+          "preco": 1249
+        },
+        {
+          "data": "2026-06-11",
+          "preco": 1199
+        },
+        {
+          "data": "2026-06-19",
+          "preco": 1149
+        },
+        {
+          "data": "2026-06-27",
+          "preco": 1099
+        },
+        {
+          "data": "2026-07-05",
+          "preco": 1069
+        },
+        {
+          "data": "2026-07-13",
+          "preco": 1049
+        },
+        {
+          "data": "2026-07-22",
+          "preco": 1019
+        }
+      ],
+      "loja": "",
+      "slugGuia": "guias/robo-aspirador.html"
+    },
+    {
+      "id": "fone-bluetooth",
+      "nome": "Fone de ouvido bluetooth",
+      "categoria": "Eletrônicos",
+      "imagem": "/imagens/otimizadas/produtos/fone-bluetooth.webp",
+      "alt": "Fone de ouvido bluetooth bege",
+      "nota": 9.0,
+      "perfil": "Uso diário e chamadas",
+      "termos": "fone bluetooth headphone áudio musica microfone bateria",
+      "especificacoes": ["Conexão Bluetooth", "Microfone integrado", "Até 30 h com estojo"],
+      "precoReferencia": 349,
+      "precoAtual": 279,
+      "urlOferta": "",
+      "historico": [
+        {
+          "data": "2026-04-24",
+          "preco": 349
+        },
+        {
+          "data": "2026-05-02",
+          "preco": 339
+        },
+        {
+          "data": "2026-05-10",
+          "preco": 329
+        },
+        {
+          "data": "2026-05-18",
+          "preco": 319
+        },
+        {
+          "data": "2026-05-26",
+          "preco": 309
+        },
+        {
+          "data": "2026-06-03",
+          "preco": 319
+        },
+        {
+          "data": "2026-06-11",
+          "preco": 299
+        },
+        {
+          "data": "2026-06-19",
+          "preco": 289
+        },
+        {
+          "data": "2026-06-27",
+          "preco": 299
+        },
+        {
+          "data": "2026-07-05",
+          "preco": 285
+        },
+        {
+          "data": "2026-07-13",
+          "preco": 279
+        },
+        {
+          "data": "2026-07-22",
+          "preco": 279
+        }
+      ],
+      "loja": "",
+      "slugGuia": "guias/fone-bluetooth.html"
+    },
+    {
+      "id": "cafeteira",
+      "nome": "Cafeteira elétrica",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/cafeteira.webp",
+      "alt": "Cafeteira elétrica preta e inox",
+      "nota": 8.8,
+      "perfil": "Café diário para família",
+      "termos": "cafeteira elétrica café filtro jarra cozinha",
+      "especificacoes": ["Jarra de 1,2 L", "Filtro reutilizável", "Sistema corta-pingos"],
+      "precoReferencia": 219,
+      "precoAtual": 179,
+      "urlOferta": "",
+      "historico": [
+        {
+          "data": "2026-04-24",
+          "preco": 219
+        },
+        {
+          "data": "2026-05-02",
+          "preco": 209
+        },
+        {
+          "data": "2026-05-10",
+          "preco": 199
+        },
+        {
+          "data": "2026-05-18",
+          "preco": 205
+        },
+        {
+          "data": "2026-05-26",
+          "preco": 195
+        },
+        {
+          "data": "2026-06-03",
+          "preco": 189
+        },
+        {
+          "data": "2026-06-11",
+          "preco": 199
+        },
+        {
+          "data": "2026-06-19",
+          "preco": 185
+        },
+        {
+          "data": "2026-06-27",
+          "preco": 189
+        },
+        {
+          "data": "2026-07-05",
+          "preco": 179
+        },
+        {
+          "data": "2026-07-13",
+          "preco": 184
+        },
+        {
+          "data": "2026-07-22",
+          "preco": 179
+        }
+      ],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html"
+    },
+    {
+      "id": "air-fryer-compacta",
+      "nome": "Air fryer compacta 3,5 L",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/air-fryer.webp",
+      "alt": "Air fryer compacta preta",
+      "nota": 8.8,
+      "perfil": "Compacta para 1–2 pessoas",
+      "termos": "air fryer fritadeira compacta pequena casal cozinha",
+      "especificacoes": ["Capacidade de 3,5 L", "Controle manual", "Ocupa pouco espaço"],
+      "precoReferencia": 349,
+      "precoAtual": 289,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 329},
+        {"data": "2026-06-20", "preco": 319},
+        {"data": "2026-07-05", "preco": 299},
+        {"data": "2026-07-22", "preco": 289}
+      ],
+      "loja": "",
+      "slugGuia": "guias/air-fryer.html"
+    },
+    {
+      "id": "air-fryer-familia",
+      "nome": "Air fryer família 5,5 L",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/air-fryer.webp",
+      "alt": "Air fryer familiar preta",
+      "nota": 9.1,
+      "perfil": "Família e porções maiores",
+      "termos": "air fryer fritadeira grande família cesto largo cozinha",
+      "especificacoes": ["Capacidade de 5,5 L", "Cesto largo", "Programas automáticos"],
+      "precoReferencia": 599,
+      "precoAtual": 499,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 579},
+        {"data": "2026-06-20", "preco": 559},
+        {"data": "2026-07-05", "preco": 529},
+        {"data": "2026-07-22", "preco": 499}
+      ],
+      "loja": "",
+      "slugGuia": "guias/air-fryer.html"
+    },
+    {
+      "id": "robo-aspirador-essencial",
+      "nome": "Robô aspirador essencial",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/robo-aspirador.webp",
+      "alt": "Robô aspirador preto compacto",
+      "nota": 8.5,
+      "perfil": "Manutenção de apartamentos",
+      "termos": "robo aspirador básico apartamento limpeza diária",
+      "especificacoes": ["Navegação aleatória", "Perfil baixo", "Retorno à base"],
+      "precoReferencia": 849,
+      "precoAtual": 699,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 829},
+        {"data": "2026-06-20", "preco": 779},
+        {"data": "2026-07-05", "preco": 729},
+        {"data": "2026-07-22", "preco": 699}
+      ],
+      "loja": "",
+      "slugGuia": "guias/robo-aspirador.html"
+    },
+    {
+      "id": "robo-aspirador-lidar",
+      "nome": "Robô aspirador com mapeamento",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/robo-aspirador.webp",
+      "alt": "Robô aspirador com torre de mapeamento",
+      "nota": 9.3,
+      "perfil": "Casas maiores e rotinas programadas",
+      "termos": "robo aspirador lidar mapeamento aplicativo casa grande",
+      "especificacoes": ["Mapeamento a laser", "Zonas de limpeza", "Maior potência de sucção"],
+      "precoReferencia": 1899,
+      "precoAtual": 1599,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 1849},
+        {"data": "2026-06-20", "preco": 1799},
+        {"data": "2026-07-05", "preco": 1699},
+        {"data": "2026-07-22", "preco": 1599}
+      ],
+      "loja": "",
+      "slugGuia": "guias/robo-aspirador.html"
+    },
+    {
+      "id": "fone-bluetooth-compacto",
+      "nome": "Fone Bluetooth compacto",
+      "categoria": "Eletrônicos",
+      "imagem": "/imagens/otimizadas/produtos/fone-bluetooth.webp",
+      "alt": "Fone Bluetooth compacto bege",
+      "nota": 8.4,
+      "perfil": "Chamadas e deslocamentos curtos",
+      "termos": "fone bluetooth compacto barato chamada microfone",
+      "especificacoes": ["Até 18 h com estojo", "Controles por toque", "Estojo compacto"],
+      "precoReferencia": 199,
+      "precoAtual": 149,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 189},
+        {"data": "2026-06-20", "preco": 179},
+        {"data": "2026-07-05", "preco": 159},
+        {"data": "2026-07-22", "preco": 149}
+      ],
+      "loja": "",
+      "slugGuia": "guias/fone-bluetooth.html"
+    },
+    {
+      "id": "fone-bluetooth-anc",
+      "nome": "Fone Bluetooth com ANC",
+      "categoria": "Eletrônicos",
+      "imagem": "/imagens/otimizadas/produtos/fone-bluetooth.webp",
+      "alt": "Fone Bluetooth com cancelamento de ruído",
+      "nota": 9.2,
+      "perfil": "Viagens e ambientes ruidosos",
+      "termos": "fone bluetooth anc cancelamento ruído viagem bateria",
+      "especificacoes": ["Cancelamento ativo", "Modo transparência", "Até 36 h com estojo"],
+      "precoReferencia": 599,
+      "precoAtual": 499,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 579},
+        {"data": "2026-06-20", "preco": 549},
+        {"data": "2026-07-05", "preco": 529},
+        {"data": "2026-07-22", "preco": 499}
+      ],
+      "loja": "",
+      "slugGuia": "guias/fone-bluetooth.html"
+    },
+    {
+      "id": "cafeteira-compacta",
+      "nome": "Cafeteira compacta 600 ml",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/cafeteira.webp",
+      "alt": "Cafeteira elétrica compacta",
+      "nota": 8.4,
+      "perfil": "Uma ou duas pessoas",
+      "termos": "cafeteira elétrica compacta pequena café cozinha",
+      "especificacoes": ["Jarra de 600 ml", "Filtro permanente", "Base compacta"],
+      "precoReferencia": 169,
+      "precoAtual": 139,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 159},
+        {"data": "2026-06-20", "preco": 149},
+        {"data": "2026-07-05", "preco": 145},
+        {"data": "2026-07-22", "preco": 139}
+      ],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html"
+    },
+    {
+      "id": "cafeteira-programavel",
+      "nome": "Cafeteira programável 1,5 L",
+      "categoria": "Casa e Cozinha",
+      "imagem": "/imagens/otimizadas/produtos/cafeteira.webp",
+      "alt": "Cafeteira elétrica programável",
+      "nota": 9.1,
+      "perfil": "Famílias e rotina programada",
+      "termos": "cafeteira programável timer família jarra grande café",
+      "especificacoes": ["Jarra de 1,5 L", "Timer programável", "Ajuste de intensidade"],
+      "precoReferencia": 369,
+      "precoAtual": 299,
+      "urlOferta": "",
+      "historico": [
+        {"data": "2026-06-01", "preco": 349},
+        {"data": "2026-06-20", "preco": 329},
+        {"data": "2026-07-05", "preco": 319},
+        {"data": "2026-07-22", "preco": 299}
+      ],
+      "loja": "",
+      "slugGuia": "guias/cafeteira.html"
+    }
+  ],
+  "demonstrativo": true
+}

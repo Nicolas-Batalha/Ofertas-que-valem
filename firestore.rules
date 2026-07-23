@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.uid == "COLE_O_UID_DO_ADMIN_AQUI";
+    }
+
+    match /ofertas/{ofertaId} {
+      allow read: if true;
+
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly([
+          "produto_id",
+          "loja",
+          "url",
+          "preco",
+          "ativo",
+          "updated_at"
+        ])
+        && request.resource.data.produto_id is string
+        && request.resource.data.loja in [
+          "Amazon",
+          "Mercado Livre",
+          "Shopee",
+          "Casas Bahia"
+        ]
+        && request.resource.data.url is string
+        && request.resource.data.preco is number
+        && request.resource.data.preco >= 0
+        && request.resource.data.ativo is bool
+        && request.resource.data.updated_at is timestamp;
+
+      allow delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

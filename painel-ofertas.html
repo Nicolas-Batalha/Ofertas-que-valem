@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#002f43">
+  <title>Painel de ofertas | Ofertas que Valem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <link rel="stylesheet" href="/assets/css/painel-ofertas.css">
+  <script type="module" src="/assets/js/painel-ofertas.js"></script>
+</head>
+<body class="pagina-painel-ofertas">
+  <header class="cabecalho-painel">
+    <div class="limite cabecalho-painel-conteudo">
+      <a class="marca" href="/" aria-label="Ofertas que Valem — início">
+        <span class="marca-simbolo" aria-hidden="true"><span>✓</span></span>
+        <span class="marca-texto">Ofertas <small>que Valem</small></span>
+      </a>
+      <a class="voltar-painel" href="/guias/air-fryer.html">Voltar ao guia</a>
+    </div>
+  </header>
+
+  <main class="painel-ofertas-conteudo">
+    <header class="introducao-painel">
+      <h1>Painel de ofertas</h1>
+      <p>Cole seus links de afiliado, salve e atualize o guia e o comparador sem editar o código.</p>
+    </header>
+
+    <section class="aviso-painel" id="aviso-configuracao-painel" hidden>
+      <strong>Falta conectar o banco de dados.</strong>
+      <span>Preencha o arquivo de configuração do Firebase para liberar o acesso.</span>
+    </section>
+
+    <section class="cartao-painel" id="area-login-painel">
+      <h2>Entrar no painel</h2>
+      <p>Use o e-mail e a senha cadastrados como administrador.</p>
+      <form class="formulario-login-painel" id="formulario-login-painel">
+        <label class="campo-painel">
+          <span>E-mail</span>
+          <input id="email-painel" type="email" autocomplete="username" required>
+        </label>
+        <label class="campo-painel">
+          <span>Senha</span>
+          <input id="senha-painel" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="botao-painel" type="submit">Entrar com segurança</button>
+        <p class="status-painel" id="status-login-painel" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="cartao-painel" id="area-administracao-painel" hidden>
+      <header class="cabecalho-administracao">
+        <div>
+          <h2>Gerenciar links</h2>
+          <p id="usuario-painel"></p>
+        </div>
+        <button class="botao-painel botao-painel-secundario" id="sair-painel" type="button">Sair</button>
+      </header>
+
+      <form class="formulario-ofertas-painel" id="formulario-ofertas-painel">
+        <label class="campo-painel">
+          <span>Produto</span>
+          <select id="produto-painel" required></select>
+        </label>
+
+        <div class="produto-selecionado-painel" id="produto-selecionado-painel">
+          <img id="imagem-produto-painel" src="" alt="" width="84" height="84">
+          <div><strong id="nome-produto-painel"></strong><small id="id-produto-painel"></small></div>
+        </div>
+
+        <div class="grade-lojas-painel" id="grade-lojas-painel"></div>
+
+        <div class="acoes-painel">
+          <p class="status-painel" id="status-ofertas-painel" role="status" aria-live="polite"></p>
+          <button class="botao-painel" id="salvar-ofertas-painel" type="submit">Salvar e publicar ofertas</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

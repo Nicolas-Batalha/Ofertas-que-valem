@@ -5,7 +5,7 @@ export const firebaseConfig = Object.freeze({
   storageBucket: "",
   messagingSenderId: "",
   appId: "",
-  adminUid: ""
+  adminUid: "kpU6X9tsXATbyuUw7fje269z4EL2"
 });
 
 export function firebaseConfigurado() {

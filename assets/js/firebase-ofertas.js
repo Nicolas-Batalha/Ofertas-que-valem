@@ -15,6 +15,32 @@ export async function carregarRegistros() {
   return resultado.docs.map((documento) => documento.data());
 }
 
+export async function carregarProdutosRemotos() {
+  const banco = obterBanco();
+  if (!banco) return [];
+  const resultado = await getDocs(collection(banco, "produtos"));
+  return resultado.docs.map((documento) => ({
+    ...documento.data(),
+    id: documento.data().id || documento.id,
+    guiaSlug: documento.data().guiaSlug || documento.data().guia_slug || "",
+    slugGuia: documento.data().slugGuia
+      || (documento.data().guiaSlug ? `guia/${documento.data().guiaSlug}` : "")
+  }));
+}
+
+export async function carregarGuiasPublicados() {
+  const banco = obterBanco();
+  if (!banco) return [];
+  const resultado = await getDocs(collection(banco, "guias"));
+  return resultado.docs
+    .map((documento) => ({
+      ...documento.data(),
+      slug: documento.data().slug || documento.id
+    }))
+    .filter((guia) => guia.publicado !== false)
+    .sort((a, b) => a.titulo.localeCompare(b.titulo, "pt-BR"));
+}
+
 export function mesclarCatalogo(catalogo, registros) {
   if (!Array.isArray(catalogo?.produtos) || !Array.isArray(registros)) return catalogo;
   const porProduto = new Map();
@@ -74,8 +100,25 @@ export async function carregarCatalogo(caminho = "/assets/data/produtos.json") {
   if (!firebaseConfigurado()) return catalogo;
 
   try {
-    const registros = await carregarRegistros();
-    return mesclarCatalogo(catalogo, registros);
+    const [resultadoRegistros, resultadoRemotos] = await Promise.allSettled([
+      carregarRegistros(),
+      carregarProdutosRemotos()
+    ]);
+    const registros = resultadoRegistros.status === "fulfilled" ? resultadoRegistros.value : [];
+    const remotos = resultadoRemotos.status === "fulfilled" ? resultadoRemotos.value : [];
+    const porId = new Map(catalogo.produtos.map((produto) => [produto.id, produto]));
+    remotos.forEach((produto) => porId.set(produto.id, {
+      precoAtual: 0,
+      precoReferencia: 0,
+      urlOferta: "",
+      loja: "",
+      historico: [],
+      ...produto
+    }));
+    return mesclarCatalogo({
+      ...catalogo,
+      produtos: [...porId.values()]
+    }, registros);
   } catch {
     return catalogo;
   }

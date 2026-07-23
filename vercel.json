@@ -1,4 +1,15 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/guia/:slug",
+      "destination": "/api/guia?slug=:slug"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

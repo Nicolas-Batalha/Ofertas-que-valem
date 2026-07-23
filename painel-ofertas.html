@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#002f43">
-  <title>Painel de ofertas | Ofertas que Valem</title>
+  <title>Painel de conteúdo | Ofertas que Valem</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -20,22 +20,23 @@
         <span class="marca-simbolo" aria-hidden="true"><span>✓</span></span>
         <span class="marca-texto">Ofertas <small>que Valem</small></span>
       </a>
-      <a class="voltar-painel" id="voltar-guia-painel" href="/guias/air-fryer.html">Abrir guia selecionado</a>
+      <a class="voltar-painel" id="abrir-site-painel" href="/guias.html">Ver guias publicados</a>
     </div>
   </header>
 
   <main class="painel-ofertas-conteudo">
     <header class="introducao-painel">
-      <h1>Painel de ofertas</h1>
-      <p>Cole seus links de afiliado, salve e atualize o guia e o comparador sem editar o código.</p>
+      <span class="rotulo-painel">Central de publicação</span>
+      <h1>Crie categorias, produtos e ofertas</h1>
+      <p>Cadastre uma vez e o conteúdo aparece automaticamente nos guias, na busca, no comparador e no sitemap.</p>
     </header>
 
     <section class="aviso-painel" id="aviso-configuracao-painel" hidden>
       <strong>Falta conectar o banco de dados.</strong>
-      <span>Preencha o arquivo de configuração do Firebase para liberar o acesso.</span>
+      <span>Confira a configuração do Firebase para liberar o painel.</span>
     </section>
 
-    <section class="cartao-painel" id="area-login-painel">
+    <section class="cartao-painel cartao-login-painel" id="area-login-painel">
       <h2>Entrar no painel</h2>
       <p>Use o e-mail e a senha cadastrados como administrador.</p>
       <form class="formulario-login-painel" id="formulario-login-painel">
@@ -52,62 +53,129 @@
       </form>
     </section>
 
-    <section class="cartao-painel" id="area-administracao-painel" hidden>
-      <header class="cabecalho-administracao">
+    <section class="area-administracao-painel" id="area-administracao-painel" hidden>
+      <header class="cabecalho-administracao cartao-painel">
         <div>
-          <h2>Gerenciar links</h2>
-          <p id="usuario-painel"></p>
+          <span class="status-online-painel">Painel conectado</span>
+          <h2>Olá, <span id="usuario-painel">administrador</span></h2>
+          <p>Escolha o que deseja publicar.</p>
         </div>
         <button class="botao-painel botao-painel-secundario" id="sair-painel" type="button">Sair</button>
       </header>
 
-      <form class="formulario-ofertas-painel" id="formulario-ofertas-painel">
-        <section class="organizador-produtos-painel" aria-labelledby="titulo-organizador-painel">
-          <header class="cabecalho-organizador-painel">
-            <span class="numero-etapa-painel" aria-hidden="true">1</span>
-            <div>
-              <h3 id="titulo-organizador-painel">Escolha a pasta e o produto</h3>
-              <p>Os produtos ficam separados automaticamente pelo guia ao qual pertencem.</p>
-            </div>
-          </header>
+      <nav class="abas-painel" aria-label="Áreas do painel">
+        <button class="aba-painel ativa" type="button" data-aba="ofertas" aria-selected="true">
+          <strong>Ofertas</strong><span>Links e preços</span>
+        </button>
+        <button class="aba-painel" type="button" data-aba="guias" aria-selected="false">
+          <strong>Categorias e guias</strong><span>Crie novas páginas</span>
+        </button>
+        <button class="aba-painel" type="button" data-aba="produtos" aria-selected="false">
+          <strong>Produtos</strong><span>Monte os rankings</span>
+        </button>
+      </nav>
 
-          <div class="grade-organizador-painel">
-            <label class="campo-painel">
-              <span>Pasta de produtos</span>
-              <select id="pasta-painel" required></select>
-            </label>
-            <label class="campo-painel">
-              <span>Buscar nesta pasta</span>
-              <input id="busca-produto-painel" type="search" placeholder="Digite marca ou modelo" autocomplete="off">
-            </label>
-            <label class="campo-painel campo-produto-painel">
-              <span>Produto</span>
-              <select id="produto-painel" required></select>
-            </label>
-          </div>
-          <p class="resumo-pasta-painel" id="resumo-pasta-painel"></p>
-        </section>
-
-        <div class="produto-selecionado-painel" id="produto-selecionado-painel">
-          <img id="imagem-produto-painel" src="" alt="" width="84" height="84">
-          <div>
-            <span class="pasta-produto-painel" id="pasta-produto-painel"></span>
-            <strong id="nome-produto-painel"></strong>
-            <small id="id-produto-painel"></small>
-          </div>
-        </div>
-
-        <header class="cabecalho-etapa-lojas">
-          <span class="numero-etapa-painel" aria-hidden="true">2</span>
-          <div><h3>Cadastre os links das lojas</h3><p>Preencha somente as lojas em que você possui uma oferta válida.</p></div>
+      <section class="painel-secao ativa" id="secao-ofertas-painel" data-secao="ofertas">
+        <header class="cabecalho-secao-painel">
+          <div><span class="rotulo-painel">Etapa final</span><h2>Links das lojas</h2><p>Escolha um produto e cole somente ofertas válidas.</p></div>
         </header>
-        <div class="grade-lojas-painel" id="grade-lojas-painel"></div>
+        <form class="cartao-painel formulario-ofertas-painel" id="formulario-ofertas-painel">
+          <section class="organizador-produtos-painel" aria-labelledby="titulo-organizador-painel">
+            <header class="cabecalho-organizador-painel">
+              <span class="numero-etapa-painel" aria-hidden="true">1</span>
+              <div><h3 id="titulo-organizador-painel">Escolha a pasta e o produto</h3><p>As pastas são criadas automaticamente a partir de cada guia.</p></div>
+            </header>
+            <div class="grade-organizador-painel">
+              <label class="campo-painel"><span>Pasta de produtos</span><select id="pasta-painel" required></select></label>
+              <label class="campo-painel"><span>Buscar nesta pasta</span><input id="busca-produto-painel" type="search" placeholder="Digite marca ou modelo" autocomplete="off"></label>
+              <label class="campo-painel campo-produto-painel"><span>Produto</span><select id="produto-painel" required></select></label>
+            </div>
+            <p class="resumo-pasta-painel" id="resumo-pasta-painel"></p>
+          </section>
 
-        <div class="acoes-painel">
-          <p class="status-painel" id="status-ofertas-painel" role="status" aria-live="polite"></p>
-          <button class="botao-painel" id="salvar-ofertas-painel" type="submit">Salvar e publicar ofertas</button>
+          <div class="produto-selecionado-painel" id="produto-selecionado-painel" hidden>
+            <img id="imagem-produto-painel" src="" alt="" width="84" height="84">
+            <div><span class="pasta-produto-painel" id="pasta-produto-painel"></span><strong id="nome-produto-painel"></strong><small id="id-produto-painel"></small></div>
+          </div>
+
+          <header class="cabecalho-etapa-lojas">
+            <span class="numero-etapa-painel" aria-hidden="true">2</span>
+            <div><h3>Cadastre os links das lojas</h3><p>O botão recebe automaticamente a cor e a marca de cada loja.</p></div>
+          </header>
+          <div class="grade-lojas-painel" id="grade-lojas-painel"></div>
+          <div class="acoes-painel">
+            <p class="status-painel" id="status-ofertas-painel" role="status" aria-live="polite"></p>
+            <button class="botao-painel" id="salvar-ofertas-painel" type="submit">Salvar e publicar ofertas</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="painel-secao" id="secao-guias-painel" data-secao="guias" hidden>
+        <header class="cabecalho-secao-painel">
+          <div><span class="rotulo-painel">Comece aqui</span><h2>Categorias e guias</h2><p>Cada guia vira uma página automática e uma pasta organizada para seus produtos.</p></div>
+          <button class="botao-painel botao-painel-secundario" id="novo-guia-painel" type="button">Novo guia</button>
+        </header>
+        <div class="grade-editor-painel">
+          <form class="cartao-painel formulario-editor-painel" id="formulario-guia-painel">
+            <input id="guia-id-original-painel" type="hidden">
+            <div class="cabecalho-formulario-painel"><span class="numero-etapa-painel" aria-hidden="true">1</span><div><h3>Informações da página</h3><p>O endereço é criado automaticamente a partir do título.</p></div></div>
+            <div class="grade-campos-painel">
+              <label class="campo-painel"><span>Categoria</span><input id="categoria-guia-painel" type="text" placeholder="Ex.: Casa e Cozinha" required></label>
+              <label class="campo-painel"><span>Título do guia</span><input id="titulo-guia-painel" type="text" placeholder="Ex.: Melhores liquidificadores" required></label>
+              <label class="campo-painel campo-largo-painel"><span>Endereço da página</span><div class="campo-prefixado-painel"><span>/guia/</span><input id="slug-guia-painel" type="text" placeholder="melhores-liquidificadores" required></div><small>Use letras, números e hífens.</small></label>
+              <label class="campo-painel campo-largo-painel"><span>Descrição</span><textarea id="descricao-guia-painel" rows="4" placeholder="Explique o que a pessoa vai aprender e comparar." required></textarea></label>
+              <label class="campo-painel campo-largo-painel"><span>Imagem de capa por URL</span><input id="imagem-guia-painel" type="url" placeholder="https://..."></label>
+              <label class="campo-painel campo-largo-painel campo-arquivo-painel"><span>Ou envie uma imagem</span><input id="arquivo-guia-painel" type="file" accept="image/jpeg,image/png,image/webp"><small>A imagem será guardada na pasta automática deste guia.</small></label>
+            </div>
+            <label class="controle-publicacao-painel"><input id="publicado-guia-painel" type="checkbox" checked><span><strong>Publicar página</strong><small>Desmarque para salvar como rascunho.</small></span></label>
+            <div class="acoes-painel">
+              <p class="status-painel" id="status-guia-painel" role="status" aria-live="polite"></p>
+              <button class="botao-painel" type="submit">Salvar guia automático</button>
+            </div>
+          </form>
+          <aside class="cartao-painel lista-editor-painel">
+            <div class="cabecalho-lista-painel"><h3>Guias cadastrados</h3><span id="quantidade-guias-painel">0</span></div>
+            <div class="lista-itens-painel" id="lista-guias-painel"></div>
+          </aside>
         </div>
-      </form>
+      </section>
+
+      <section class="painel-secao" id="secao-produtos-painel" data-secao="produtos" hidden>
+        <header class="cabecalho-secao-painel">
+          <div><span class="rotulo-painel">Monte o ranking</span><h2>Produtos</h2><p>Cadastre especificações, prós, pontos de atenção e posição no guia.</p></div>
+          <button class="botao-painel botao-painel-secundario" id="novo-produto-painel" type="button">Novo produto</button>
+        </header>
+        <div class="grade-editor-painel">
+          <form class="cartao-painel formulario-editor-painel" id="formulario-produto-painel">
+            <input id="produto-id-original-painel" type="hidden">
+            <div class="cabecalho-formulario-painel"><span class="numero-etapa-painel" aria-hidden="true">2</span><div><h3>Produto do ranking</h3><p>Selecione o guia para manter tudo na pasta certa.</p></div></div>
+            <div class="grade-campos-painel">
+              <label class="campo-painel campo-largo-painel"><span>Guia e pasta</span><select id="guia-produto-painel" required></select></label>
+              <label class="campo-painel"><span>Nome do produto</span><input id="nome-cadastro-produto-painel" type="text" placeholder="Ex.: Liquidificador Mondial L-99" required></label>
+              <label class="campo-painel"><span>Marca</span><input id="marca-produto-painel" type="text" placeholder="Ex.: Mondial"></label>
+              <label class="campo-painel"><span>Código</span><input id="codigo-produto-painel" type="text" placeholder="liquidificador-mondial-l99" required></label>
+              <label class="campo-painel"><span>Posição no ranking</span><input id="posicao-produto-painel" type="number" min="1" max="100" value="1" required></label>
+              <label class="campo-painel"><span>Nota editorial</span><input id="nota-produto-painel" type="number" min="0" max="10" step="0.1" value="8.0" required></label>
+              <label class="campo-painel"><span>Perfil recomendado</span><input id="perfil-produto-painel" type="text" placeholder="Ex.: Melhor custo-benefício" required></label>
+              <label class="campo-painel campo-largo-painel"><span>Imagem por URL</span><input id="imagem-cadastro-produto-painel" type="url" placeholder="https://..."></label>
+              <label class="campo-painel campo-largo-painel campo-arquivo-painel"><span>Ou envie a imagem do produto</span><input id="arquivo-produto-painel" type="file" accept="image/jpeg,image/png,image/webp"><small>Será criada a pasta catálogo/categoria/guia/produto.</small></label>
+              <label class="campo-painel campo-largo-painel"><span>Especificações</span><textarea id="especificacoes-produto-painel" rows="4" placeholder="Uma característica por linha" required></textarea></label>
+              <label class="campo-painel"><span>Prós</span><textarea id="pros-produto-painel" rows="4" placeholder="Um ponto positivo por linha" required></textarea></label>
+              <label class="campo-painel"><span>Pontos de atenção</span><textarea id="contras-produto-painel" rows="4" placeholder="Um ponto por linha" required></textarea></label>
+            </div>
+            <label class="controle-publicacao-painel"><input id="publicado-produto-painel" type="checkbox" checked><span><strong>Publicar no ranking</strong><small>O produto também aparecerá na busca e no comparador.</small></span></label>
+            <div class="acoes-painel">
+              <p class="status-painel" id="status-produto-cadastro-painel" role="status" aria-live="polite"></p>
+              <button class="botao-painel" type="submit">Salvar produto</button>
+            </div>
+          </form>
+          <aside class="cartao-painel lista-editor-painel">
+            <div class="cabecalho-lista-painel"><h3>Produtos cadastrados</h3><span id="quantidade-produtos-painel">0</span></div>
+            <label class="campo-painel"><span>Filtrar por guia</span><select id="filtro-guia-produtos-painel"></select></label>
+            <div class="lista-itens-painel" id="lista-produtos-painel"></div>
+          </aside>
+        </div>
+      </section>
     </section>
   </main>
 </body>

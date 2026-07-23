@@ -4,7 +4,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
       return request.auth != null
-        && request.auth.uid == "COLE_O_UID_DO_ADMIN_AQUI";
+        && request.auth.uid == "kpU6X9tsXATbyuUw7fje269z4EL2";
     }
 
     match /ofertas/{ofertaId} {
@@ -30,6 +30,89 @@ service cloud.firestore {
         && request.resource.data.preco is number
         && request.resource.data.preco >= 0
         && request.resource.data.ativo is bool
+        && request.resource.data.updated_at is timestamp;
+
+      allow delete: if isAdmin();
+    }
+
+    match /guias/{guiaId} {
+      allow read: if true;
+
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly([
+          "slug",
+          "categoria",
+          "categoriaSlug",
+          "titulo",
+          "descricao",
+          "imagem",
+          "publicado",
+          "updated_at"
+        ])
+        && request.resource.data.slug is string
+        && request.resource.data.slug == guiaId
+        && request.resource.data.categoria is string
+        && request.resource.data.categoriaSlug is string
+        && request.resource.data.titulo is string
+        && request.resource.data.descricao is string
+        && request.resource.data.imagem is string
+        && request.resource.data.publicado is bool
+        && request.resource.data.updated_at is timestamp;
+
+      allow delete: if isAdmin();
+    }
+
+    match /produtos/{produtoId} {
+      allow read: if true;
+
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly([
+          "id",
+          "guiaSlug",
+          "categoria",
+          "categoriaSlug",
+          "slugGuia",
+          "nome",
+          "marca",
+          "imagem",
+          "alt",
+          "nota",
+          "perfil",
+          "termos",
+          "posicao",
+          "especificacoes",
+          "pros",
+          "contras",
+          "publicado",
+          "precoAtual",
+          "precoReferencia",
+          "updated_at"
+        ])
+        && request.resource.data.id is string
+        && request.resource.data.id == produtoId
+        && request.resource.data.guiaSlug is string
+        && request.resource.data.categoria is string
+        && request.resource.data.categoriaSlug is string
+        && request.resource.data.slugGuia is string
+        && request.resource.data.nome is string
+        && request.resource.data.marca is string
+        && request.resource.data.imagem is string
+        && request.resource.data.alt is string
+        && request.resource.data.nota is number
+        && request.resource.data.nota >= 0
+        && request.resource.data.nota <= 10
+        && request.resource.data.perfil is string
+        && request.resource.data.termos is string
+        && request.resource.data.posicao is int
+        && request.resource.data.posicao >= 1
+        && request.resource.data.especificacoes is list
+        && request.resource.data.pros is list
+        && request.resource.data.contras is list
+        && request.resource.data.publicado is bool
+        && request.resource.data.precoAtual is number
+        && request.resource.data.precoAtual == 0
+        && request.resource.data.precoReferencia is number
+        && request.resource.data.precoReferencia == 0
         && request.resource.data.updated_at is timestamp;
 
       allow delete: if isAdmin();

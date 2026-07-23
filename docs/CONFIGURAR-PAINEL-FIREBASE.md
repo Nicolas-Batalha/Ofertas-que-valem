@@ -42,9 +42,8 @@ A configuração Web e a `apiKey` são públicas. A segurança das alterações 
 ## 4. Publicar as regras
 
 1. Abra o arquivo `firestore.rules`.
-2. Troque `COLE_O_UID_DO_ADMIN_AQUI` pelo UID do seu usuário.
-3. No Firestore, abra a aba Rules.
-4. Cole o conteúdo completo e clique em Publish.
+2. No Firestore, abra a aba Rules.
+3. Cole o conteúdo completo e clique em Publish.
 
 As regras deixam as ofertas visíveis para o site, mas somente o UID do administrador pode cadastrar ou alterar links.
 
@@ -54,12 +53,31 @@ Em Authentication > Settings > Authorized domains, confirme que estes domínios 
 
 - `localhost`
 - `ofertas-que-valem.vercel.app`
+- `ofertasquevalem.shop`
+- `www.ofertasquevalem.shop`
 
-## 6. Usar o painel
+## 6. Liberar o envio de imagens
+
+1. Abra Storage no Firebase e conclua a criação do armazenamento.
+2. Abra a aba Rules do Storage.
+3. Cole o conteúdo completo de `storage.rules`.
+4. Clique em Publish.
+
+As imagens enviadas pelo painel são guardadas automaticamente em:
+
+`catalogo/<categoria>/<guia>/<produto>/`
+
+Somente o administrador pode enviar imagens. A leitura é pública porque as imagens aparecem nos guias.
+
+## 7. Usar o painel
 
 1. Publique os arquivos atualizados.
 2. Acesse `/painel-ofertas.html`.
 3. Entre com o usuário administrador.
-4. Escolha o produto, cole os links e salve.
+4. Crie a categoria e o guia.
+5. Cadastre os produtos do ranking.
+6. Cole os links das lojas e salve.
 
 Para retirar uma oferta, apague o link daquela loja e salve novamente.
+
+O site gera a página em `/guia/<endereco>`, adiciona os produtos à busca e ao comparador e inclui o guia no sitemap dinâmico.

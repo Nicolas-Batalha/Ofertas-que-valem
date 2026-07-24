@@ -2034,8 +2034,9 @@ body.pagina-interna { background: var(--fundo); color: var(--texto); }
   background: #fff;
 }
 
-.pagina-ranking-air-fryer {
+main.pagina-ranking-air-fryer {
   width: min(100% - 32px, 900px);
+  margin-inline: auto;
   padding-top: 32px;
   padding-bottom: 90px;
 }
@@ -2636,7 +2637,7 @@ body.pagina-interna { background: var(--fundo); color: var(--texto); }
 }
 
 @media (max-width: 560px) {
-  .pagina-ranking-air-fryer {
+  main.pagina-ranking-air-fryer {
     width: min(100% - 26px, 900px);
     padding-top: 20px;
   }

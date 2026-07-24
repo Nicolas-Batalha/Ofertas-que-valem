@@ -170,7 +170,7 @@ export async function GET(request) {
   <script src="/assets/js/navegacao.js" defer></script>
   <script type="application/ld+json">${schema}</script>
 </head>
-<body class="pagina-interna pagina-ranking-air-fryer" data-guia-id="${escaparHtml(slug)}">
+<body class="pagina-interna" data-guia-id="${escaparHtml(slug)}">
   <a class="pular-conteudo" href="#conteudo-principal">Pular para o conteúdo</a>
   <header class="cabecalho">
     <div class="limite cabecalho-conteudo">

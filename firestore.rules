@@ -45,6 +45,10 @@ service cloud.firestore {
           "categoriaSlug",
           "titulo",
           "descricao",
+          "tituloIntroducao",
+          "textoApoio",
+          "tituloMetodologia",
+          "textoMetodologia",
           "imagem",
           "publicado",
           "updated_at"
@@ -55,6 +59,10 @@ service cloud.firestore {
         && request.resource.data.categoriaSlug is string
         && request.resource.data.titulo is string
         && request.resource.data.descricao is string
+        && request.resource.data.tituloIntroducao is string
+        && request.resource.data.textoApoio is string
+        && request.resource.data.tituloMetodologia is string
+        && request.resource.data.textoMetodologia is string
         && request.resource.data.imagem is string
         && request.resource.data.publicado is bool
         && request.resource.data.updated_at is timestamp;

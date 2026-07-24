@@ -367,6 +367,52 @@
 .status-painel[data-tipo="sucesso"] { color: #087942; }
 .status-painel[data-tipo="erro"] { color: #bd2d22; }
 
+.editor-textos-guia-painel {
+  display: grid;
+  gap: 16px;
+  border: 1px solid #cfe0e5;
+  border-radius: 14px;
+  padding: 18px;
+  background: #f7fbfc;
+}
+
+.editor-textos-guia-painel > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.editor-textos-guia-painel h4 {
+  margin: 0;
+  color: #002f43;
+  font-size: 17px;
+}
+
+.editor-textos-guia-painel p {
+  margin: 4px 0 0;
+  color: #607780;
+  font-size: 13px;
+}
+
+.botao-limpar-textos-painel {
+  flex: 0 0 auto;
+  border: 1px solid #d5a29d;
+  border-radius: 9px;
+  padding: 9px 11px;
+  color: #a72820;
+  background: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.botao-limpar-textos-painel:hover {
+  color: #fff;
+  background: #b9362c;
+}
+
 .grade-editor-painel {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(290px, .75fr);
@@ -478,6 +524,7 @@
   .campo-largo-painel { grid-column: auto; }
   .cabecalho-administracao,
   .cabecalho-secao-painel,
+  .editor-textos-guia-painel > header,
   .acoes-painel { align-items: stretch; flex-direction: column; }
   .cabecalho-painel-conteudo { min-height: 66px; }
   .voltar-painel { padding-inline: 12px; font-size: 12px; }

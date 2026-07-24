@@ -123,7 +123,19 @@
               <label class="campo-painel"><span>Categoria</span><input id="categoria-guia-painel" type="text" placeholder="Ex.: Casa e Cozinha" required></label>
               <label class="campo-painel"><span>Título do guia</span><input id="titulo-guia-painel" type="text" placeholder="Ex.: Melhores liquidificadores" required></label>
               <label class="campo-painel campo-largo-painel"><span>Endereço da página</span><div class="campo-prefixado-painel"><span>/guia/</span><input id="slug-guia-painel" type="text" placeholder="melhores-liquidificadores" required></div><small>Use letras, números e hífens.</small></label>
-              <label class="campo-painel campo-largo-painel"><span>Descrição</span><textarea id="descricao-guia-painel" rows="4" placeholder="Explique o que a pessoa vai aprender e comparar." required></textarea></label>
+              <label class="campo-painel campo-largo-painel"><span>Texto principal</span><textarea id="descricao-guia-painel" rows="5" placeholder="Explique o que a pessoa vai aprender e comparar."></textarea><small>Você pode modificar ou apagar este texto.</small></label>
+              <section class="editor-textos-guia-painel campo-largo-painel" aria-labelledby="titulo-editor-textos-guia">
+                <header>
+                  <div><h4 id="titulo-editor-textos-guia">Outros textos da página</h4><p>Altere o conteúdo ou deixe um campo vazio para tirá-lo do guia.</p></div>
+                  <button class="botao-limpar-textos-painel" id="limpar-textos-guia-painel" type="button">Tirar textos opcionais</button>
+                </header>
+                <div class="grade-campos-painel">
+                  <label class="campo-painel campo-largo-painel"><span>Título da introdução</span><input id="titulo-introducao-guia-painel" type="text" placeholder="Compare antes de escolher"></label>
+                  <label class="campo-painel campo-largo-painel"><span>Texto de apoio</span><textarea id="texto-apoio-guia-painel" rows="3" placeholder="Use as fichas, os prós e os pontos de atenção..."></textarea></label>
+                  <label class="campo-painel campo-largo-painel"><span>Título do texto final</span><input id="titulo-metodologia-guia-painel" type="text" placeholder="Como este guia funciona"></label>
+                  <label class="campo-painel campo-largo-painel"><span>Texto final</span><textarea id="texto-metodologia-guia-painel" rows="3" placeholder="Explique como o ranking e as ofertas funcionam."></textarea></label>
+                </div>
+              </section>
               <label class="campo-painel campo-largo-painel"><span>Imagem de capa por URL</span><input id="imagem-guia-painel" type="url" placeholder="https://..."></label>
               <label class="campo-painel campo-largo-painel campo-arquivo-painel"><span>Ou envie uma imagem</span><input id="arquivo-guia-painel" type="file" accept="image/jpeg,image/png,image/webp"><small>A imagem será guardada na pasta automática deste guia.</small></label>
             </div>

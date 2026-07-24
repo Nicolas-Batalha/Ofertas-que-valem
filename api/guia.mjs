@@ -128,6 +128,10 @@ export async function GET(request) {
     const imagem = urlSegura(guia.imagem);
     const titulo = guia.titulo || `Guia de ${guia.categoria}`;
     const descricao = guia.descricao || `Compare os melhores produtos de ${guia.categoria}.`;
+    const tituloIntroducao = guia.tituloIntroducao ?? "Compare antes de escolher";
+    const textoApoio = guia.textoApoio ?? "Use as fichas, os prós e os pontos de atenção para encontrar o modelo mais adequado ao seu perfil.";
+    const tituloMetodologia = guia.tituloMetodologia ?? "Como este guia funciona";
+    const textoMetodologia = guia.textoMetodologia ?? "A ordem é definida no painel editorial. Preços e links são exibidos apenas quando cadastrados nas lojas parceiras.";
     const atualizado = guia.updated_at ? new Date(guia.updated_at).toLocaleDateString("pt-BR") : "conteúdo em atualização";
     const schema = JSON.stringify({
       "@context": "https://schema.org",
@@ -191,12 +195,12 @@ export async function GET(request) {
       </header>
       <section class="introducao-ranking-air-fryer">
         <img src="${escaparHtml(imagem)}" alt="${escaparHtml(titulo)}" width="500" height="500">
-        <div><h2>Compare antes de escolher</h2><p>${escaparHtml(descricao)}</p><p>Use as fichas, os prós e os pontos de atenção para encontrar o modelo mais adequado ao seu perfil.</p></div>
+        <div>${tituloIntroducao ? `<h2>${escaparHtml(tituloIntroducao)}</h2>` : ""}${guia.descricao ? `<p>${escaparHtml(guia.descricao)}</p>` : ""}${textoApoio ? `<p>${escaparHtml(textoApoio)}</p>` : ""}</div>
       </section>
       <section class="lista-produtos-ranking" aria-label="Ranking de produtos">
         ${produtos.length ? produtos.map((produto, indice) => cartaoProduto(produto, indice, todasOfertas)).join("") : `<div class="estado-vazio-pagina"><h2>Produtos em preparação</h2><p>O guia foi criado e os primeiros modelos serão publicados em breve.</p></div>`}
       </section>
-      <section class="fontes-ranking-air-fryer"><h2>Como este guia funciona</h2><p>A ordem é definida no painel editorial. Preços e links são exibidos apenas quando cadastrados nas lojas parceiras.</p></section>
+      ${tituloMetodologia || textoMetodologia ? `<section class="fontes-ranking-air-fryer">${tituloMetodologia ? `<h2>${escaparHtml(tituloMetodologia)}</h2>` : ""}${textoMetodologia ? `<p>${escaparHtml(textoMetodologia)}</p>` : ""}</section>` : ""}
     </article>
   </main>
   <aside class="comparador-flutuante-guia" id="comparador-guia" aria-label="Produtos selecionados para comparar" hidden><div class="miniaturas-comparador-guia" id="miniaturas-comparador-guia" aria-hidden="true"></div><p id="texto-comparador-guia">Nenhum produto selecionado</p><a id="ir-comparador-guia" href="/comparar.html" aria-disabled="true">Comparar agora</a></aside>

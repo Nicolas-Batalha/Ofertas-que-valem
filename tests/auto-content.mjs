@@ -26,6 +26,10 @@ const guia = documento("guias", "teste-guia", {
   categoriaSlug: "cozinha",
   titulo: "Melhores produtos de teste",
   descricao: "Compare modelos reais antes de escolher.",
+  tituloIntroducao: "Escolha com clareza",
+  textoApoio: "Veja os detalhes antes da compra.",
+  tituloMetodologia: "Nosso critério",
+  textoMetodologia: "A seleção considera desempenho e custo-benefício.",
   imagem: "https://example.com/capa.webp",
   publicado: true
 });
@@ -75,6 +79,8 @@ try {
   assert.equal(respostaGuia.status, 200);
   const html = await respostaGuia.text();
   assert.match(html, /Melhores produtos de teste/);
+  assert.match(html, /Escolha com clareza/);
+  assert.match(html, /Nosso critério/);
   assert.match(html, /Produto Teste 500/);
   assert.match(html, /data-loja="amazon"/);
   assert.match(html, /https:\/\/www\.ofertasquevalem\.shop\/guia\/teste-guia/);

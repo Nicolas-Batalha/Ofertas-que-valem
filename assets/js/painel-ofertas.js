@@ -441,6 +441,10 @@ function limparFormularioGuia() {
   $("#guia-id-original-painel").value = "";
   $("#publicado-guia-painel").checked = true;
   $("#slug-guia-painel").readOnly = false;
+  $("#titulo-introducao-guia-painel").value = "Compare antes de escolher";
+  $("#texto-apoio-guia-painel").value = "Use as fichas, os prós e os pontos de atenção para encontrar o modelo mais adequado ao seu perfil.";
+  $("#titulo-metodologia-guia-painel").value = "Como este guia funciona";
+  $("#texto-metodologia-guia-painel").value = "A ordem é definida no painel editorial. Preços e links são exibidos apenas quando cadastrados nas lojas parceiras.";
   slugGuiaAlteradoManualmente = false;
   definirStatus(elementos.statusGuia, "");
 }
@@ -454,6 +458,10 @@ function editarGuia(slug) {
   $("#slug-guia-painel").value = guia.slug;
   $("#slug-guia-painel").readOnly = true;
   $("#descricao-guia-painel").value = guia.descricao || "";
+  $("#titulo-introducao-guia-painel").value = guia.tituloIntroducao ?? "Compare antes de escolher";
+  $("#texto-apoio-guia-painel").value = guia.textoApoio ?? "Use as fichas, os prós e os pontos de atenção para encontrar o modelo mais adequado ao seu perfil.";
+  $("#titulo-metodologia-guia-painel").value = guia.tituloMetodologia ?? "Como este guia funciona";
+  $("#texto-metodologia-guia-painel").value = guia.textoMetodologia ?? "A ordem é definida no painel editorial. Preços e links são exibidos apenas quando cadastrados nas lojas parceiras.";
   $("#imagem-guia-painel").value = guia.imagem?.startsWith("http") ? guia.imagem : "";
   $("#publicado-guia-painel").checked = guia.publicado !== false;
   slugGuiaAlteradoManualmente = true;
@@ -628,6 +636,10 @@ elementos.formularioGuia.addEventListener("submit", async (evento) => {
       categoriaSlug,
       titulo: $("#titulo-guia-painel").value.trim(),
       descricao: $("#descricao-guia-painel").value.trim(),
+      tituloIntroducao: $("#titulo-introducao-guia-painel").value.trim(),
+      textoApoio: $("#texto-apoio-guia-painel").value.trim(),
+      tituloMetodologia: $("#titulo-metodologia-guia-painel").value.trim(),
+      textoMetodologia: $("#texto-metodologia-guia-painel").value.trim(),
       imagem,
       publicado: $("#publicado-guia-painel").checked,
       updated_at: serverTimestamp()
@@ -730,6 +742,13 @@ $("#novo-guia-painel").addEventListener("click", () => {
   limparFormularioGuia();
   elementos.formularioGuia.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+$("#limpar-textos-guia-painel").addEventListener("click", () => {
+  $("#titulo-introducao-guia-painel").value = "";
+  $("#texto-apoio-guia-painel").value = "";
+  $("#titulo-metodologia-guia-painel").value = "";
+  $("#texto-metodologia-guia-painel").value = "";
+  definirStatus(elementos.statusGuia, "Textos opcionais removidos. Clique em salvar para publicar a alteração.");
+});
 $("#novo-produto-painel").addEventListener("click", () => {
   limparFormularioProduto();
   elementos.formularioProduto.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -756,4 +775,5 @@ function iniciar() {
   onAuthStateChanged(autenticacao, atualizarSessao);
 }
 
+limparFormularioGuia();
 iniciar();
